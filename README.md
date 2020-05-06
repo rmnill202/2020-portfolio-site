@@ -3,6 +3,8 @@ This is my new portfolio website for the new decade! My last site was feeling a 
 
 ## Some Details
 - Written with Vue, vue-router, vuex and babel/webpack. 
+- Material components from [Material Design Lite](https://getmdl.io/index.html)
+- Placeholders from https://placekitten.com/
 
 ## Building and Running
 - Make sure you've got `npm` installed.
