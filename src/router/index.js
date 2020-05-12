@@ -12,12 +12,25 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+  },
+  {
+    path: '/blog',
+    name: 'blog',
+    component: () => import(/* webpackChunkName: "blog" */ '../views/Blog.vue'),
+  },
   // Dynamically load project pages
   ...Projects.projects.map( proj =>({
     path: `/project/${proj.id}`,
     name: `proj-${proj.id}`,
     component: () => import(`../views/projects/P_${proj.id}.vue`)
   })),
+  // Dynamically load blog posts
+  // TO DO
+  
   // Fallback pages
   {
     path: '/*',

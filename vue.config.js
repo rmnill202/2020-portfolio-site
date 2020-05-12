@@ -22,11 +22,18 @@ module.exports = {
       registry: undefined,
       renderRoutes: [
         '/',
+        '/about',
+        '/blog',
         ...Projects.projects.map( proj => `/project/${proj.id}`),
       ],
       useRenderEvent: true,
       headless: true,
       onlyProduction: true
     }
-  }
+  },
+
+  transpileDependencies: [
+    "vuetify"
+  ],
+
 }
