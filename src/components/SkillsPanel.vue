@@ -1,67 +1,50 @@
 <template>
-  <div style="text-align: left; margin: 0px 37.5px 0px 37.5px">
+  <div style="text-align: left; margin: 75px 37.5px 0px 37.5px">
     <!-- <div style="width: 150px; height: 150px;">
       <img class="diamond_img" src="~@/assets/placeholder.jpeg"/>
       <div class="diamond_text">Raytracer</div>
       <div class="bottom_text">Click for more!</div>
     </div> -->
-    
-    <div class="skill-grid">
-      <!-- <div style="width: 300px; height: 300px;">
-        <div class="diamond_div" style="position: absolute; margin-top: 75px">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-        <div class="diamond_div" style="position: absolute; margin-top: 150px; margin-left: 75px">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-        <div class="diamond_div" style="position: absolute; margin-left: 75px">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-        <div class="diamond_div" style="position: absolute; margin-top: 75px; margin-left: 150px;">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-      </div>
-      <div style="width: 300px; height: 300px;">
-        <div class="diamond_div" style="position: absolute; margin-top: 75px">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-        <div class="diamond_div" style="position: absolute; margin-top: 150px; margin-left: 75px">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-        <div class="diamond_div" style="position: absolute; margin-left: 75px">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-        <div class="diamond_div" style="position: absolute; margin-top: 75px; margin-left: 150px;">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-      </div> -->
-      <div class="diamond_div" v-for="(s, index) in skills" 
-        :style="getStyle(index)">
-        <div class="diamond_secondary"/>
-        <div class="diamond_text">Raytracer</div>
-      </div>
 
-      <!-- <div class="diamond_div">
-        <div class="diamond_secondary"/>
-        <div class="diamond_text">Raytracer</div>
-      </div> -->
-      <!-- <div class="diamond_div">
+  
+
+    
+    <!-- <div class="skill-grid">
+      <div v-for="(s, index) in skills" v-if="index % 2 == 0">
+        <div class="diamond_div" style="margin-top: -70px">
+          <div class="diamond_secondary"/>
+          <div class="diamond_text">Raytracer</div>
+        </div>
+        
+        <div class="diamond_div" style="margin-top: -70px; margin-right: -37.5px; margin-left: -75px;" v-if="index < skills.length">
+          <div class="diamond_secondary"/>
+          <div class="diamond_text">Raytracer</div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="skill-grid">
+      <div class="diamond_div" v-for="(s, index) in skills">
         <div class="diamond_secondary"/>
         <div class="diamond_text">Raytracer</div>
       </div>
-      <div class="diamond_div">
-        <div class="diamond_secondary"/>
-        <div class="diamond_text">Raytracer</div>
-      </div> -->
     </div>
+
+
+    <!-- <div class="skill-grid">
+      <div v-for="(s, index) in skills" v-if="index % 2 == 0" style="display: grid; grid-template-columns: 50% 50%;">
+        <div class="diamond_div" style="">
+          <div class="diamond_secondary"/>
+          <div class="diamond_text">Raytracer</div>
+        </div>
+        
+        <div class="diamond_div" style="" v-if="index < skills.length">
+          <div class="diamond_secondary"/>
+          <div class="diamond_text">Raytracer</div>
+        </div>
+      </div>
+    </div> -->
+
     
   </div>
 </template>
@@ -115,15 +98,25 @@ export default {
       // }
 
       
-      if(index % 3 == 0) {
-        return 'margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px';
-      }
-      if(index % 3 == 1) {
-        return 'margin-top: 150px; margin-right: -37.5px; margin-left: -37.5px';
-      }
-      if(index % 3 == 2) {
-        return 'margin-top: 0px; margin-right: -37.5px; margin-left: -112.5px';
-      }
+      // if(index % 3 == 0) {
+      //   return 'margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px';
+      // }
+      // if(index % 3 == 1) {
+      //   return 'margin-top: 150px; margin-right: -37.5px; margin-left: -37.5px';
+      // }
+      // if(index % 3 == 2) {
+      //   return 'margin-top: 0px; margin-right: -37.5px; margin-left: -112.5px';
+      // }
+
+      // if(index % 3 == 0) {
+      //   return 'margin-bottom: 0px;  margin-right: -37.5px; margin-left: -37.5px';
+      // }
+      // if(index % 3 == 1) {
+      //   return 'margin-bottom: 0px; margin-right: -37.5px; margin-left: -37.5px';
+      // }
+      // if(index % 3 == 2) {
+      //   return 'margin-bottom: 0px; margin-right: -37.5px; margin-left: -112.5px';
+      // }
     }
   }
 };
@@ -136,6 +129,60 @@ export default {
   justify-content: center;
 
 }
+
+/* .diamond_div:nth-child(3n + 1) {
+margin-top: -75px;  margin-right: -37.5px; margin-left: -37.5px;
+}
+.diamond_div:nth-child(3n + 2) {
+margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
+}
+.diamond_div:nth-child(3n + 0) {
+margin-top: -150px; margin-right: -37.5px; margin-left: -112.5px;
+} */
+
+/* .diamond_div:nth-child(3n + 1) {
+margin-top: 0px;  margin-right: -37.5px; margin-left: -37.5px;
+}
+.diamond_div:nth-child(3n + 2) {
+margin-top: -75px; margin-right: -37.5px; margin-left: -37.5px;
+}
+.diamond_div:nth-child(3n + 0) {
+margin-top: -150px; margin-right: -37.5px; margin-left: -112.5px;
+} */
+
+
+/* .diamond_div:nth-child(1n + 1) {
+margin-top: 0px;  margin-right: -37.5px; margin-left: -37.5px;
+}
+.diamond_div:nth-child(2n + 0) {
+margin-top: -75px; margin-right: -37.5px; margin-left: -37.5px;
+}
+
+.diamond_div:nth-child(3n + 0) {
+flex-basis: 1;
+} */
+
+/* .diamond_div:nth-child(3n + 1) {
+margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px;
+}
+.diamond_div:nth-child(3n + 2) {
+margin-top: 150px; margin-right: -37.5px; margin-left: -37.5px;
+}
+.diamond_div:nth-child(3n + 0) {
+margin-top: 0px; margin-right: -37.5px; margin-left: -112.5px;
+} */
+
+.diamond_div:nth-child(1n + 1) {
+margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px;
+}
+.diamond_div:nth-child(2n + 0) {
+margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
+}
+
+
+    
+
+
 
 .diamond_div {
   /* background-image: url('~@/assets/placeholder.jpeg'); */

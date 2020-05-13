@@ -18,15 +18,15 @@ export default {
   ],
 
   skills: [ 
-    { title: 'Front-end Web', sub: ['HTML/CSS', 'VueJS', 'Angular', 'Material', 'UX/UI'] },
-    { title: 'Back-end Web', sub: ['Java (Spring, Spark)', 'PHP', 'MySQL'] },
-    { title: 'Graphics Programming', sub: ['OpenGL/GLSL', 'OSL', 'HLSL'] },
-    { title: 'Software Design', sub: ['Object-oriented Programming', 'Patterns', 'Software Architecture', 'UML', ] },
-    { title: 'Software Process', sub: ['SDLC', 'Scrum', 'Domain-driven Design', ] },
+    {v: 4, title: 'Front-end Web',           sub: ['HTML/CSS', 'VueJS', 'Angular', 'Material', 'UX/UI'] },
+    {v: 3, title: 'Back-end Web',            sub: ['Java (Spring, Spark)', 'PHP', 'MySQL'] },
+    {v: 3, title: 'Graphics Programming',    sub: ['OpenGL/GLSL', 'OSL', 'HLSL'] },
+    {v: 4, title: 'Software Design',         sub: ['Object-oriented Programming', 'Patterns', 'Software Architecture', 'UML', ] },
+    {v: 4, title: 'Software Process',        sub: ['SDLC', 'Scrum', 'Domain-driven Design', ] },
 
-    { title: 'Languages I Know Best', sub: ['JavaScript', 'Java', 'C/C++', ] },
-    { title: 'Languages I Know Well', sub: ['Python', 'C#', ] },
-    { title: 'Languages I\'ve Used', sub: ['Ruby', 'PHP'] },
+    {v: 4, title: 'Languages I Know Best',   sub: ['JavaScript', 'Java', 'C/C++', ] },
+    {v: 3, title: 'Languages I Know Well',   sub: ['Python', 'C#', ] },
+    {v: 2, title: 'Languages I\'ve Used',    sub: ['Ruby', 'PHP'] },
 
     
   ],

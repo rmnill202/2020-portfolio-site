@@ -51,7 +51,7 @@ export default {
   display: grid;
   row-gap: 25px;
 
-  grid-template-columns: 45% 10% 45%;
+  grid-template-columns: 45% 5% 50%;
   margin: 0px 20px;
 }
 
