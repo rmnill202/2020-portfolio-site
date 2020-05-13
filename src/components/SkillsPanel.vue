@@ -1,14 +1,14 @@
 <template>
-  <div style="text-align: left; margin: 75px 37.5px 0px 37.5px">
+  <div style="text-align: left; margin: 0px 37.5px 0px 37.5px">
 
     <div class="skill-grid">
-      <div class="diamond-div" v-for="(s, index) in skills">
+      <button class="diamond-div" v-for="(s, index) in skills">
         <div :class="`diamond-fill fill-${s.v}`" :style="`background-color: ${s.color}`"/>
         <div class="diamond-text">{{s.title}}</div>
         <div class="diamond-details">
           <div v-for="sub in s.sub"> {{sub}}</div>
         </div>
-      </div>
+      </button>
     </div>
 
     
@@ -58,6 +58,7 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
 
 .diamond-div {
   /* background-image: url('~@/assets/placeholder.jpeg'); */
+  flex-direction: column;
   background-color: #d2d2d2;
   height: 150px;
   width:  150px;
@@ -65,9 +66,13 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   transition: all 0.5s;
 }
-.diamond-div:hover { 
+.diamond-div:hover {
+  background-color: #c4c4c4;
+}
+.diamond-div:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
   z-index: 9999;
+  pointer-events: none; /* Allows the second click to de-focus */
 }
 
 
@@ -85,7 +90,7 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
 
   pointer-events: none;
 }
-.diamond-div:hover .diamond-text {
+.diamond-div:focus .diamond-text {
   color: rgba(255, 255, 255, 0);
 }
 
@@ -97,46 +102,13 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
   transition: color 0.25s;
   pointer-events: none;
 }
-.diamond-div:hover .diamond-details {
+.diamond-div:focus .diamond-details {
   color: rgba(255, 255, 255, 255);
 }
 
-/* .fill-4 {
-  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
-}
-.fill-3 { 
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%, 50% 50%);
-}
-.fill-2 { 
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 100% 100%, 50% 100%, 50% 50%);
-}
-.fill-1 { 
-  clip-path: polygon(50% 0, 100% 0, 100% 50%, 100% 50%, 100% 50%, 50% 50%); 
-}
-.diamond-div:hover .fill-1, .diamond-div:hover .fill-2, .diamond-div:hover .fill-3, .diamond-div:hover .fill-4 {
-  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
-} */
-
-
-
-/* .fill-4 {
-  
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);
-}
-.fill-3 { 
-  
-  clip-path: polygon(75% 0, 100% 0, 100% 100%, 0 100%, 0 75%);
-}
-.fill-2 { 
-  
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 100%);
-}
-.fill-1 { 
-  
-} */
 
 .fill-4 {
-  clip-path: polygon(0 45%, 45% 0, 95% 50%, 50% 95%);
+  clip-path: polygon(5% 50%, 50% 5%, 95% 50%, 50% 95%);
 }
 .fill-3 { 
   clip-path: polygon(15% 50%, 50% 15%, 85% 50%, 50% 85%);
@@ -149,7 +121,7 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
   
 }
 
-.diamond-div:hover .fill-1, .diamond-div:hover .fill-2, .diamond-div:hover .fill-3, .diamond-div:hover .fill-4 {
+.diamond-div:focus .fill-1, .diamond-div:focus .fill-2, .diamond-div:focus .fill-3, .diamond-div:focus .fill-4 {
   /* clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0); */
   /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0); */
   clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%);

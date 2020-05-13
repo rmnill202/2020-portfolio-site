@@ -5,7 +5,7 @@
     <div>
 
       <!-- Navigation Bar -->
-      <v-toolbar flat color="transparent"> <!--  height="100px" -->
+      <v-toolbar flat color="transparent" min-height="64px" height="64px"> <!--  height="100px" -->
 
         <!-- Icon / Social links -->
         <div class="hidden-xs-only">
