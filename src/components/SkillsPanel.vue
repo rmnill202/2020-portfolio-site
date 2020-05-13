@@ -1,49 +1,15 @@
 <template>
   <div style="text-align: left; margin: 75px 37.5px 0px 37.5px">
-    <!-- <div style="width: 150px; height: 150px;">
-      <img class="diamond_img" src="~@/assets/placeholder.jpeg"/>
-      <div class="diamond_text">Raytracer</div>
-      <div class="bottom_text">Click for more!</div>
-    </div> -->
-
-  
-
-    
-    <!-- <div class="skill-grid">
-      <div v-for="(s, index) in skills" v-if="index % 2 == 0">
-        <div class="diamond_div" style="margin-top: -70px">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-        
-        <div class="diamond_div" style="margin-top: -70px; margin-right: -37.5px; margin-left: -75px;" v-if="index < skills.length">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-      </div>
-    </div> -->
 
     <div class="skill-grid">
-      <div class="diamond_div" v-for="(s, index) in skills">
-        <div class="diamond_secondary"/>
-        <div class="diamond_text">Raytracer</div>
+      <div class="diamond-div" v-for="(s, index) in skills">
+        <div :class="`diamond-fill fill-${s.v}`" :style="`background-color: ${s.color}`"/>
+        <div class="diamond-text">{{s.title}}</div>
+        <div class="diamond-details">
+          <div v-for="sub in s.sub"> {{sub}}</div>
+        </div>
       </div>
     </div>
-
-
-    <!-- <div class="skill-grid">
-      <div v-for="(s, index) in skills" v-if="index % 2 == 0" style="display: grid; grid-template-columns: 50% 50%;">
-        <div class="diamond_div" style="">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-        
-        <div class="diamond_div" style="" v-if="index < skills.length">
-          <div class="diamond_secondary"/>
-          <div class="diamond_text">Raytracer</div>
-        </div>
-      </div>
-    </div> -->
 
     
   </div>
@@ -58,66 +24,14 @@ export default {
   data() {
     return {
       skills: HomeInfo.skills,
-      // FULL - clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
       // 4/4 - clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
       // 3/4 - clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%, 50% 50%);
       // 2/4 - clip-path: polygon(50% 0, 100% 0, 100% 100%, 100% 100%, 50% 100%, 50% 50%);
-      // 1/4 - clip-path: polygon(50% 0, 100% 0, 100% 50%, 100% 50%, 100% 50%, 50% 50%);
-      // 
+      // 1/4 - clip-path: polygon(50% 0, 100% 0, 100% 50%, 100% 50%, 100% 50%, 50% 50%); 
     };
   },
   methods: {
-    getStyle(index) {
-      // if(index % 4 == 0) {
-      //   return 'margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 4 == 1) {
-      //   return 'margin-top: 150px; margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 4 == 2) {
-      //   return 'margin-top: 75px; margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 4 == 3) {
-      //   return 'margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px';
-      // }
-
-      // if(index % 5 == 0) {
-      //   return 'margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 5 == 1) {
-      //   return 'margin-top: 150px; margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 5 == 2) {
-      //   return 'margin-top: 0px; margin-right: -37.5px; margin-left: -112.5px';
-      // }
-      // if(index % 5 == 3) {
-      //   return 'margin-top: 75px; margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 5 == 4) {
-      //   return 'margin-top: 150px; margin-right: -37.5px; margin-left: -37.5px';
-      // }
-
-      
-      // if(index % 3 == 0) {
-      //   return 'margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 3 == 1) {
-      //   return 'margin-top: 150px; margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 3 == 2) {
-      //   return 'margin-top: 0px; margin-right: -37.5px; margin-left: -112.5px';
-      // }
-
-      // if(index % 3 == 0) {
-      //   return 'margin-bottom: 0px;  margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 3 == 1) {
-      //   return 'margin-bottom: 0px; margin-right: -37.5px; margin-left: -37.5px';
-      // }
-      // if(index % 3 == 2) {
-      //   return 'margin-bottom: 0px; margin-right: -37.5px; margin-left: -112.5px';
-      // }
-    }
+    
   }
 };
 </script>
@@ -130,52 +44,10 @@ export default {
 
 }
 
-/* .diamond_div:nth-child(3n + 1) {
-margin-top: -75px;  margin-right: -37.5px; margin-left: -37.5px;
-}
-.diamond_div:nth-child(3n + 2) {
-margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
-}
-.diamond_div:nth-child(3n + 0) {
-margin-top: -150px; margin-right: -37.5px; margin-left: -112.5px;
-} */
-
-/* .diamond_div:nth-child(3n + 1) {
-margin-top: 0px;  margin-right: -37.5px; margin-left: -37.5px;
-}
-.diamond_div:nth-child(3n + 2) {
-margin-top: -75px; margin-right: -37.5px; margin-left: -37.5px;
-}
-.diamond_div:nth-child(3n + 0) {
-margin-top: -150px; margin-right: -37.5px; margin-left: -112.5px;
-} */
-
-
-/* .diamond_div:nth-child(1n + 1) {
-margin-top: 0px;  margin-right: -37.5px; margin-left: -37.5px;
-}
-.diamond_div:nth-child(2n + 0) {
-margin-top: -75px; margin-right: -37.5px; margin-left: -37.5px;
-}
-
-.diamond_div:nth-child(3n + 0) {
-flex-basis: 1;
-} */
-
-/* .diamond_div:nth-child(3n + 1) {
+.diamond-div:nth-child(1n + 1) {
 margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px;
 }
-.diamond_div:nth-child(3n + 2) {
-margin-top: 150px; margin-right: -37.5px; margin-left: -37.5px;
-}
-.diamond_div:nth-child(3n + 0) {
-margin-top: 0px; margin-right: -37.5px; margin-left: -112.5px;
-} */
-
-.diamond_div:nth-child(1n + 1) {
-margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px;
-}
-.diamond_div:nth-child(2n + 0) {
+.diamond-div:nth-child(2n + 0) {
 margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
 }
 
@@ -184,7 +56,7 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
 
 
 
-.diamond_div {
+.diamond-div {
   /* background-image: url('~@/assets/placeholder.jpeg'); */
   background-color: #d2d2d2;
   height: 150px;
@@ -193,32 +65,115 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   transition: all 0.5s;
 }
-
-.diamond_text {
-  height:150px; 
-  width: 150px;
-  line-height: 150px;
-  position: absolute; 
-  text-align: center;
-  color: #fff;
-  transition: color 0.25s;
+.diamond-div:hover { 
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+  z-index: 9999;
 }
 
-.diamond_secondary {
+
+.diamond-text {
+  /* height:150px;  */
+  width: 150px;
+  /* line-height: 150px; */
+  margin-top: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  position: absolute; 
+  text-align: center;
+  color: rgba(255, 255, 255, 255);
+  transition: color 0.25s;
+
+  pointer-events: none;
+}
+.diamond-div:hover .diamond-text {
+  color: rgba(255, 255, 255, 0);
+}
+
+.diamond-details {
+  width: 150px;
+  position: absolute; 
+  text-align: center;
+  color: rgba(255, 255, 255, 0);
+  transition: color 0.25s;
+  pointer-events: none;
+}
+.diamond-div:hover .diamond-details {
+  color: rgba(255, 255, 255, 255);
+}
+
+/* .fill-4 {
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+}
+.fill-3 { 
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%, 50% 50%);
+}
+.fill-2 { 
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 100% 100%, 50% 100%, 50% 50%);
+}
+.fill-1 { 
+  clip-path: polygon(50% 0, 100% 0, 100% 50%, 100% 50%, 100% 50%, 50% 50%); 
+}
+.diamond-div:hover .fill-1, .diamond-div:hover .fill-2, .diamond-div:hover .fill-3, .diamond-div:hover .fill-4 {
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+} */
+
+
+
+/* .fill-4 {
+  
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);
+}
+.fill-3 { 
+  
+  clip-path: polygon(75% 0, 100% 0, 100% 100%, 0 100%, 0 75%);
+}
+.fill-2 { 
+  
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+}
+.fill-1 { 
+  
+} */
+
+.fill-4 {
+  clip-path: polygon(0 45%, 45% 0, 95% 50%, 50% 95%);
+}
+.fill-3 { 
+  clip-path: polygon(15% 50%, 50% 15%, 85% 50%, 50% 85%);
+}
+.fill-2 { 
+  clip-path: polygon(25% 50%, 50% 25%, 75% 50%, 50% 75%);
+  
+}
+.fill-1 { 
+  
+}
+
+.diamond-div:hover .fill-1, .diamond-div:hover .fill-2, .diamond-div:hover .fill-3, .diamond-div:hover .fill-4 {
+  /* clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0); */
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0); */
+  clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%);
+}
+
+
+.diamond-fill {
   background-color: #82a97f;
   height: 150px;
   width:  150px;
   background-size: 150px 150px;
   position: absolute;
-  /* clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);  */
-  /* clip-path: polygon(0 74%, 100% 55%, 100% 100%, 0% 100%); */
-  /* clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%); */
-  /* clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 0); */
-
-  /* clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0); */
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 100% 100%, 50% 100%, 50% 50%);
   transition: all 0.5s;
 }
+
+/* .diamond-secondary {
+  background-color: #82a97f;
+  height: 150px;
+  width:  150px;
+  background-size: 150px 150px;
+  position: absolute;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 100% 100%, 50% 100%, 50% 50%);
+  transition: all 0.5s;
+} */
 
 .diamond_div:hover .diamond_secondary {
   /* clip-path: polygon(100% 0, 100% 100%, 0 100%); */

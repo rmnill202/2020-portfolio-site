@@ -70,6 +70,7 @@ export default {
   min-height: 1500px;
   background-image: url('~@/assets/m_bg_01.svg'), url('~@/assets/m_bg_02.svg'), url('~@/assets/m_bg_03.svg'); 
   background-repeat: repeat-x, repeat-x, repeat-x;
+  /* background-position: center top, 55% -5px, 45% -25px;  */
   background-position: center top, 55% -5px, 45% -25px; 
   background-size: 1120px, 1020px, 820px;
 

@@ -17,16 +17,21 @@ export default {
 
   ],
 
-  skills: [ 
-    {v: 4, title: 'Front-end Web',           sub: ['HTML/CSS', 'VueJS', 'Angular', 'Material', 'UX/UI'] },
-    {v: 3, title: 'Back-end Web',            sub: ['Java (Spring, Spark)', 'PHP', 'MySQL'] },
-    {v: 3, title: 'Graphics Programming',    sub: ['OpenGL/GLSL', 'OSL', 'HLSL'] },
-    {v: 4, title: 'Software Design',         sub: ['Object-oriented Programming', 'Patterns', 'Software Architecture', 'UML', ] },
-    {v: 4, title: 'Software Process',        sub: ['SDLC', 'Scrum', 'Domain-driven Design', ] },
+  // Red - #a97f7f
+  // Blue - #827fa9
+  // Purp - #917fa9
+  // Green - 
 
-    {v: 4, title: 'Languages I Know Best',   sub: ['JavaScript', 'Java', 'C/C++', ] },
-    {v: 3, title: 'Languages I Know Well',   sub: ['Python', 'C#', ] },
-    {v: 2, title: 'Languages I\'ve Used',    sub: ['Ruby', 'PHP'] },
+  skills: [ 
+    {v: 4, color: '#82a97f', title: 'Front-end Web',           sub: ['HTML/CSS,', 'VueJS,', 'Angular,', 'Material,', 'UX/UI'] },
+    {v: 3, color: '#917fa9', title: 'Back-end Web',            sub: ['Java (Spring, Spark),', 'PHP,', 'MySQL'] },
+    {v: 3, color: '#917fa9', title: 'Graphics Programming',    sub: ['OpenGL/GLSL,', 'OSL,', 'HLS,L'] },
+    {v: 4, color: '#82a97f', title: 'Software Design',         sub: ['OO Design,', 'Patterns,', 'Architecture,', 'UML,', 'Wireframes', ] },
+    {v: 4, color: '#82a97f', title: 'Software Process',        sub: ['SDLC,', 'Scrum,', 'Domain-driven Design', ] },
+
+    {v: 4, color: '#82a97f', title: 'Stuff I Know Best',   sub: ['JavaScript,', 'Java,', 'C/C++,', 'Git,', 'Lucidchart', 'REST'] },
+    {v: 3, color: '#917fa9', title: 'Stuff I Know Well',   sub: ['Python,', 'C#,', 'SVN', 'LaTeX', 'YAML, XML, etc'] },
+    {v: 2, color: '#a97f7f', title: 'Stuff I\'ve Used',    sub: ['Ruby,', 'PHP', 'SQL'] },
 
     
   ],
