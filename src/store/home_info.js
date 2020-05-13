@@ -17,9 +17,17 @@ export default {
 
   ],
 
-  skills: [ // Max value = 5
-    { title: 'Software Design',               value: 5 },
-    { title: 'Domain-driven design',          value: 4 },
-    { title: 'OO principles and design',      value: 3 },
+  skills: [ 
+    { title: 'Front-end Web', sub: ['HTML/CSS', 'VueJS', 'Angular', 'Material', 'UX/UI'] },
+    { title: 'Back-end Web', sub: ['Java (Spring, Spark)', 'PHP', 'MySQL'] },
+    { title: 'Graphics Programming', sub: ['OpenGL/GLSL', 'OSL', 'HLSL'] },
+    { title: 'Software Design', sub: ['Object-oriented Programming', 'Patterns', 'Software Architecture', 'UML', ] },
+    { title: 'Software Process', sub: ['SDLC', 'Scrum', 'Domain-driven Design', ] },
+
+    { title: 'Languages I Know Best', sub: ['JavaScript', 'Java', 'C/C++', ] },
+    { title: 'Languages I Know Well', sub: ['Python', 'C#', ] },
+    { title: 'Languages I\'ve Used', sub: ['Ruby', 'PHP'] },
+
+    
   ],
 };
