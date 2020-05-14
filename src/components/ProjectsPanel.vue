@@ -1,14 +1,18 @@
 <template>
   <div class='projects-panel-div'>
     <div class="proj-grid">
-      <button class="proj-diamond-div" v-for="(p, index) in projs">
-        <div :class="`proj-diamond-fill fill-1`" /> <!-- :style="`background-color: ${s.color}`" -->
-        <div class="proj-diamond-text">{{p.title}}</div>
-        <div class="diamond-details">
-          {{p.summary}}
-        </div>
-        <v-btn class="test-btn" :to="`/project/${p.id}`" tile depressed>More...</v-btn>
-      </button>
+
+      <div v-for="(p, index) in projs" class="diamond-container"> 
+        <button class="proj-diamond-div">
+          <div :class="`proj-diamond-fill fill-1`" /> <!-- :style="`background-color: ${s.color}`" -->
+          <div class="proj-diamond-text">{{p.title}}</div>
+          <div class="diamond-details">
+            {{p.summary}}
+          </div>
+        </button>
+        <v-btn class="test-btn" :to="`/project/${p.id}`" tile depressed block>Read More Here</v-btn>
+      </div>
+
     </div>
   </div>
 </template>
@@ -28,6 +32,17 @@ export default {
 </script>
 
 <style scoped>
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+}
+
+
+
+
+
+
+
 .projects-panel-div {
   text-align: left; 
   margin: 0px 37.5px 0px 37.5px;
@@ -39,17 +54,22 @@ export default {
   justify-content: center;
 
 }
+.diamond-container {
+  position: relative; 
+  width: 250px; 
+  height: 300px
+}
 
-.proj-diamond-div:nth-child(1n + 1) {
+.diamond-container:nth-child(1n + 1) {
 margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px;
 }
-.proj-diamond-div:nth-child(2n + 0) {
+.diamond-container:nth-child(2n + 0) {
 margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
 }
 
 
 .proj-diamond-div {
-  position: relative;
+  position: absolute;
   background-image: url('~@/assets/placeholder.jpeg');
   flex-direction: column;
   background-color: #d2d2d2;
@@ -64,20 +84,28 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
 }
 .proj-diamond-div:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
-  z-index: 9999;
+  z-index: 9998;
   border-color:transparent!important;
   outline:none;
 }
 
-.proj-diamond-div:focus .test-btn {
+.proj-diamond-div:focus + .test-btn {
   pointer-events: all; 
   bottom: 0px;
+  z-index: 9998;
+  
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+  filter: opacity(100%);
+  
 }
 .test-btn {
   position: absolute;
-  bottom: -100px;
-  pointer-events: none; 
+  bottom: 0px;
+  
+  clip-path: polygon(50% 50%,50% 50%,50% 50%,50% 50%);
   transition: all 0.5s;
+  transition-delay: 0.25s;
+  filter: opacity(0%);
 }
 
 
