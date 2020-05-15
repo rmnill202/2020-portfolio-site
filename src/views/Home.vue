@@ -12,7 +12,7 @@
 
     <!-- Skillsets, looking for -->
     <div class="homepage-skills">
-      <div class="display-1" style="margin-top: 20px">Skills</div>
+      <!-- <div class="display-1" style="margin-top: 20px">Skills</div> -->
       <skills-panel/>
       
     </div>
@@ -20,6 +20,7 @@
     <!-- Portfolio -->
     <div class="homepage-portfolio">
 
+      <!-- <div class="display-1" style="margin-left: 20px">Projects</div> -->
       <div class="project-bg"></div>
       <projects-panel/>
         
@@ -101,7 +102,7 @@ export default {
   }
 
   .resume-button {
-    margin: auto;
+    margin-left: 75px;
   }
 }
 </style>
