@@ -86,6 +86,7 @@ export default {
   margin-top: 250px;
 }
 
+/* Smaller Screens */
 @media screen and (max-width: 1039px) {
   .homepage-div {
     grid-template-columns: 100%;
