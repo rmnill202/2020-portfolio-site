@@ -2,8 +2,9 @@
   <div class="homepage-div">
     <!-- Intro - Statement, degrees -->
     <div class="homepage-intro">
-      <div class="display-3">Hi, I'm Robert Nill</div>
-      <div class="headline">Software Engineer <v-btn tile depressed small class="resume-button">View Resume (PDF)</v-btn> </div>
+      <div class="display-3 intro-name">Hi, I'm Robert Nill</div>
+      <div class="headline">Software Engineer </div>
+      <v-btn tile depressed small class="resume-button">View Resume (PDF)</v-btn>
       <!-- <div class="headline">Employment history</div> -->
       <!-- <div v-for="e in info.prof_experience">{{e.date}} - {{e.title}}</div> -->
       <!-- <div>TO DO - Resume link or history?</div> -->
@@ -68,7 +69,18 @@ export default {
 }
 
 .resume-button {
-  margin-left: 80px;
+  margin: auto 0px auto auto;
+}
+
+.homepage-intro {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: min-content min-content;
+  max-width: 450px;
+}
+.intro-name {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 /* .project-bg {
@@ -95,14 +107,34 @@ export default {
     text-align: center;
   }
 
+  .homepage-intro {
+    margin: 0px auto;
+  }
+
   .homepage-skills, .homepage-portfolio {
     grid-column-start: 1;
     grid-column-end: 2;
     margin: 0px;
   }
 
+}
+
+@media screen and (max-width: 599px) { 
+  .homepage-intro {
+    grid-template-columns: 100%;
+  }
+  .intro-name {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
   .resume-button {
-    margin-left: 75px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .homepage-intro {
+    max-width: 300px;
   }
 }
 </style>

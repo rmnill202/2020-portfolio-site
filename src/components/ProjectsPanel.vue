@@ -87,6 +87,7 @@ export default {
   width:  200px;
   background-size: 200px 200px;
   position: absolute;
+  top: 0;
   transition: all 0.75s;
   clip-path: polygon(50% 50%,50% 50%,50% 50%,50% 50%);
 }
@@ -100,6 +101,7 @@ export default {
   padding-left: 25px;
   padding-right: 25px;
   position: absolute; 
+  top: 0;
   text-align: center;
   color: rgba(255, 255, 255, 255);
   transition: color 0.25s;
@@ -113,6 +115,7 @@ export default {
   padding: 5px 5px 5px 10px;
   width: 200px;
   position: absolute; 
+  top: 0;
   text-align: left;
   color: rgba(255, 255, 255, 0);
   transition: color 0.25s;
@@ -147,7 +150,7 @@ export default {
 
 
 /** SMALLER SCRENS **/
-@media screen and (max-width: 1039px) {
+@media screen and (max-width: 1039px) and (min-width: 441px) {
   .project-grid {
     grid-template-columns: repeat(2, 210px);
   }
@@ -262,6 +265,26 @@ export default {
   }
   .project-diamond:nth-child(12) {
     margin-top: -110px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 100px);
+  }
+
+  .projects-panel-div {
+    margin-top: 120px;
+  }
+
+
+  .project-diamond:nth-child(2n + 1) {
+    grid-column-start: 1;
+    grid-column-end:   3;
+  }
+  .project-diamond:nth-child(2n + 0) {
+    grid-column-start: 2;
+    grid-column-end:   4;
   }
 }
 
