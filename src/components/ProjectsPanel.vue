@@ -1,10 +1,10 @@
 <template>
   <div class='projects-panel-div'>
-    <div class="proj-grid">
+    <!-- <div class="proj-grid">
 
       <div v-for="(p, index) in projs" class="diamond-container"> 
         <button class="proj-diamond-div">
-          <div :class="`proj-diamond-fill fill-1`" /> <!-- :style="`background-color: ${s.color}`" -->
+          <div :class="`proj-diamond-fill fill-1`" /> 
           <div class="proj-diamond-text">{{p.title}}</div>
           <div class="diamond-details">
             {{p.summary}}
@@ -13,6 +13,20 @@
         <v-btn class="test-btn" :to="`/project/${p.id}`" tile depressed block>Read More Here</v-btn>
       </div>
 
+    </div> -->
+
+    <div   class="project-grid">
+      <div class="project-diamond" v-for="(p, index) in projs"> 
+
+        <button class="project-diamond-clickable">
+          <div :class="`project-diamond-fill`" /> 
+          <div class="project-diamond-title">{{p.title}}</div>
+          <div class="project-diamond-details">
+            {{p.summary}}
+          </div>
+        </button>
+        <v-btn class="project-diamond-link" :to="`/project/${p.id}`" tile depressed block>Read More Here</v-btn>
+      </div>
     </div>
   </div>
 </template>
@@ -32,18 +46,157 @@ export default {
 </script>
 
 <style scoped>
+/** LARGER SCREENS **/
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(5, 20%);
+  justify-items: center;
+  /* grid-template-columns: repeat(5, 200px); */
+  grid-template-columns: repeat(2, 200px);
+}
+
+.project-diamond {
+  /* position: absolute; */
+  /* background-image: url('~@/assets/placeholder.jpeg');
+  flex-direction: column;
+  background-color: #d2d2d2;
+  height: 200px;
+  width:  200px;
+  background-size: 200px 200px;
+  clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
+  transition: all 0.5s;
+
+  margin-top: -90px; */
+
+  position: relative;
+  height: 200px;
+  width:  0px;
+  margin-top: -90px;
+  /* clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);  */
+  
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: red; */
+
+  /* transform: rotate(-45deg); */
+}
+
+.project-diamond:nth-child(3n + 1) {
+  grid-column-start: 1;
+  grid-column-end:   3;
+}
+.project-diamond:nth-child(3n + 2) {
+  grid-column-start: 1;
+  grid-column-end:   2;
+}
+.project-diamond:nth-child(3n + 0) {
+  grid-column-start: 2;
+  grid-column-end:   3;
+}
+
+/** SMALLER SCRENS **/
+/* @media screen and (max-width: 1039px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 210px);
+  }
+} */
+
+
+.project-diamond-clickable {
+  position: absolute;
+  background-image: url('~@/assets/placeholder.jpeg');
+  flex-direction: column;
+  background-color: #d2d2d2;
+  height: 200px;
+  width:  200px;
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);  */
+  /* clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%); */
+  clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
+  background-size: 200px 200px;
+  transition: all 0.5s;
+
+  /* transform: rotate(45deg); */
+}
+.project-diamond-clickable:hover {
+  background-color: #c4c4c4;
+}
+.project-diamond-clickable:focus { 
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);  */
+  clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%);
+  z-index: 9998;
+  border-color:transparent!important;
+  outline:none;
+  pointer-events: none;
+}
+.project-diamond-fill {
+  background-color: #82a97f;
+  height: 200px;
+  width:  200px;
+  background-size: 200px 200px;
+  position: absolute;
+  transition: all 0.5s;
+
+  clip-path: polygon(50% 50%,50% 50%,50% 50%,50% 50%);
+}
+
+.project-diamond-clickable:focus .project-diamond-fill {
+  clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%);
+}
+.project-diamond-title {
+  width: 200px;
+  margin-top: 80px;
+  padding-left: 25px;
+  padding-right: 25px;
+  position: absolute; 
+  text-align: center;
+  color: rgba(255, 255, 255, 255);
+  transition: color 0.25s;
+
+  pointer-events: none;
+}
+.project-diamond-clickable:focus .project-diamond-title {
+  color: rgba(255, 255, 255, 0);
+}
+
+.project-diamond-details {
+  padding: 5px 5px 5px 10px;
+  width: 200px;
+  position: absolute; 
+  text-align: left;
+  color: rgba(255, 255, 255, 0);
+  transition: color 0.25s;
+  pointer-events: none;
+}
+.project-diamond-clickable:focus .project-diamond-details {
+  color: rgba(255, 255, 255, 255);
+}
+
+.project-diamond-link {
+  position: absolute;
+  bottom: -36px;
+  z-index: 9998;
+  
+  clip-path: polygon(50% 50%,50% 50%,50% 50%,50% 50%);
+  transition: all 0.5s;
+  transition-delay: 0.25s;
+  filter: opacity(0%);
+  width: 200px;
+}
+.project-diamond-clickable:focus + .project-diamond-link {
+  pointer-events: all; 
+  bottom: -36px;
+  
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+  filter: opacity(100%);
+  
 }
 
 
 
 
-
-
-
-.projects-panel-div {
+/* .projects-panel-div {
   text-align: left; 
   margin: 0px 37.5px 0px 37.5px;
 }
@@ -153,6 +306,6 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
   background-size: 250px 250px;
   position: absolute;
   transition: all 0.5s;
-}
+} */
 
 </style>
