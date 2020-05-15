@@ -21,7 +21,7 @@
     <div class="homepage-portfolio">
 
       <!-- <div class="display-1" style="margin-left: 20px">Projects</div> -->
-      <div class="project-bg"></div>
+      <!-- <div class="project-bg"></div> -->
       <projects-panel/>
         
     </div>
@@ -71,7 +71,7 @@ export default {
   margin-left: 80px;
 }
 
-.project-bg {
+/* .project-bg {
   position: absolute;
   width: 100%;
   min-height: 500px;
@@ -79,7 +79,7 @@ export default {
   background-repeat: repeat-x, repeat-x, repeat-x;
   background-position: center top, 55% -5px, 45% -25px; 
   background-size: 1120px, 1020px, 820px;
-}
+} */
 
 .project-panel {
   /* min-height: 500px; */

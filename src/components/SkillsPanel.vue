@@ -1,13 +1,18 @@
 <template>
-  <div>
+  <div class="skill-div">
     <div class="skill-grid">
-      <button class="diamond-div" v-for="(s, index) in skills">
-        <div :class="`diamond-fill fill-${s.v}`" :style="`background-color: ${s.color}`"/>
-        <div class="diamond-text">{{s.title}}</div>
-        <div class="diamond-details">
-          <div v-for="sub in s.sub"> {{sub}}</div>
-        </div>
-      </button>
+
+      <div  v-for="(s, index) in skills" class="skill-diamond-container">
+        <button class="skill-diamond">
+          <div :class="`diamond-fill fill-${s.v}`" :style="`background-color: ${s.color}`"/>
+          <div class="diamond-text">{{s.title}}</div>
+          <div class="diamond-details">
+            <div v-for="sub in s.sub"> {{sub}}</div>
+          </div>
+        </button>
+      </div>
+      
+
     </div>
   </div>
 </template>
@@ -28,23 +33,83 @@ export default {
 
 <style scoped>
 
-.skill-grid {
+.skill-div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
+  margin-top: 100px;
 }
 
-.diamond-div:nth-child(1n + 1) {
-margin-top: 75px;  margin-right: -37.5px; margin-left: -37.5px;
+.skill-grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(5, 160px);
 }
-.diamond-div:nth-child(2n + 0) {
-margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
+
+.skill-diamond-container {
+  position: relative;
+  width: 0px;
+  height: 150px;
+  margin-top: -65px;
+}
+
+.skill-diamond-container {
+  grid-column-start: 1;
+  grid-column-end:   3;
+}
+.skill-diamond-container:nth-child(1) {
+  grid-column-start: 2;
+  grid-column-end:   3;
+  /* margin-top: -75px;
+  margin-right: 25px; */
+}
+.skill-diamond-container:nth-child(2) {
+  grid-column-start: 3;
+  grid-column-end:   4;
+  margin-bottom: 15px;
+}
+
+.skill-diamond-container:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end:   3;
+  grid-row-start:   2;
+  grid-row-end:     3;
+  /* margin-left: 15px; */
+  margin-bottom: 35px;
+}
+.skill-diamond-container:nth-child(4) {
+  grid-column-start: 2;
+  grid-column-end:   4;
+  grid-row-start:   2;
+  grid-row-end:     3;
+}
+.skill-diamond-container:nth-child(5) {
+  grid-column-start: 3;
+  grid-column-end:   5;
+  grid-row-start:   2;
+  grid-row-end:     3;
+  /* margin-bottom: 25px; */
+}
+
+.skill-diamond-container:nth-child(6) {
+  grid-column-start: 2;
+  grid-column-end:   3;
+}
+.skill-diamond-container:nth-child(7) {
+  grid-column-start: 3;
+  grid-column-end:   4;
+}
+.skill-diamond-container:nth-child(8) {
+  grid-column-start: 1;
+  grid-column-end:   5;
+  /* margin-left: 20px; */
 }
 
 
-.diamond-div {
+
+.skill-diamond {
   /* background-image: url('~@/assets/placeholder.jpeg'); */
+  position: absolute;
   flex-direction: column;
   background-color: #d2d2d2;
   height: 150px;
@@ -53,10 +118,10 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   transition: all 0.5s;
 }
-.diamond-div:hover {
+.skill-diamond:hover {
   background-color: #c4c4c4;
 }
-.diamond-div:focus { 
+.skill-diamond:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
   z-index: 9999;
   pointer-events: none; /* Allows the second click to de-focus */
@@ -77,7 +142,7 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
 
   pointer-events: none;
 }
-.diamond-div:focus .diamond-text {
+.skill-diamond:focus .diamond-text {
   color: rgba(255, 255, 255, 0);
 }
 
@@ -90,28 +155,41 @@ margin-top: 0px; margin-right: -37.5px; margin-left: -37.5px;
   pointer-events: none;
   margin-top: 5px;
 }
-.diamond-div:focus .diamond-details {
+.skill-diamond:focus .diamond-details {
   color: rgba(255, 255, 255, 255);
 }
 
+.fill-5 {
+  clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%);
+  
+  /* clip-path: polygon(-35% 115%, 115% -35%, 200% 50%, 50% 200%); */
+}
 
 .fill-4 {
-  clip-path: polygon(5% 50%, 50% 5%, 95% 50%, 50% 95%);
+  clip-path: polygon(-45% 105%, 105% -45%, 200% 50%, 50% 200%);
+  
+  /* clip-path: polygon(-35% 115%, 115% -35%, 200% 50%, 50% 200%); */
 }
 .fill-3 { 
-  clip-path: polygon(15% 50%, 50% 15%, 85% 50%, 50% 85%);
+  clip-path: polygon(-35% 115%, 115% -35%, 200% 50%, 50% 200%);
+
+  
+  /* clip-path: polygon(-25% 125%, 125% -25%, 200% 50%, 50% 200%); */
 }
 .fill-2 { 
-  clip-path: polygon(25% 50%, 50% 25%, 75% 50%, 50% 75%);
   
+  clip-path: polygon(-25% 125%, 125% -25%, 200% 50%, 50% 200%);
+  
+  /* clip-path: polygon(-15% 135%, 135% -15%, 200% 50%, 50% 200%); */
 }
 
 
-.diamond-div:focus .fill-2, .diamond-div:focus .fill-3, .diamond-div:focus .fill-4 {
-  /* clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0); */
-  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0); */
+.skill-diamond:focus .fill-2, .skill-diamond:focus .fill-3, .skill-diamond:focus .fill-4 {
+  /* clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%); */
   clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%);
 }
+
+
 
 .diamond-fill {
   background-color: #82a97f;

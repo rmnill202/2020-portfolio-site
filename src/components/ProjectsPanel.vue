@@ -36,20 +36,15 @@ export default {
 .projects-panel-div {
   display: flex;
   justify-content: center;
+  margin-top: -120px;
 }
 
-/** LARGER SCREENS **/
 .project-grid {
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(5, 210px);
   /* margin-right: 200px; */
 }
-
-
-
-
-
 
 .project-diamond {
   position: relative;
@@ -158,7 +153,7 @@ export default {
   }
 
   .projects-panel-div {
-    margin-top: 150px;
+    margin-top: 120px;
   }
 
   .project-diamond:nth-child(3n + 1) {
@@ -174,31 +169,32 @@ export default {
     grid-column-end:   3;
   }
 
-    .project-diamond:nth-child(1) {
-      /* margin-bottom: 150px; */
-      /* margin-right: 150px; */
-      margin-bottom: 50px;
-      margin-right: 25px;
-    }
+  .project-diamond:nth-child(1) {
+    /* margin-bottom: 150px; */
+    /* margin-right: 150px; */
+    margin-bottom: 50px;
+    margin-right: 25px;
+  }
 
-    .project-diamond:nth-child(2) {
-      /* margin-bottom: 100px;
-      margin-right: 450px; */
-      margin-top: -110px;
-      margin-right: 30px;
-    }
+  .project-diamond:nth-child(2) {
+    /* margin-bottom: 100px;
+    margin-right: 450px; */
+    margin-top: -110px;
+    margin-right: 30px;
+  }
 
-    .project-diamond:nth-child(3) {
-      margin-bottom: 10px;
-      margin-left: 15px;
-    }
+  .project-diamond:nth-child(3) {
+    margin-bottom: 10px;
+    margin-left: 15px;
+  }
 
-    .project-diamond:nth-child(4) {
-      margin-bottom: 5px;
-    }
+  .project-diamond:nth-child(4) {
+    margin-bottom: 5px;
+  }
   
 }
 
+/** LARGER SCREENS **/
 @media screen and (min-width: 1040px) {
   .project-diamond:nth-child(3n + 1) {
     grid-column-start: 2;
