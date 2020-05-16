@@ -31,9 +31,20 @@
       </v-toolbar>
 
       <!-- Drawer - Mobile -->
-      <v-navigation-drawer v-model="drawerOpen" absolute temporary>
+      <v-navigation-drawer v-model="drawerOpen" absolute temporary right>
         <v-list> 
-          <v-list-item v-for="link in pageLinks" :to="link.linkTo">  <v-list-item-content>{{link.text}}</v-list-item-content>  </v-list-item>
+           <v-list-item >
+            <v-list-item-content>
+              <div class="title">Navigation</div>
+            </v-list-item-content>
+          </v-list-item>
+          <v-divider></v-divider>
+          <v-list-item v-for="link in pageLinks" :to="link.linkTo">  
+            <v-list-item-icon>
+              <v-icon>{{ link.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>{{link.text}}</v-list-item-content>  
+          </v-list-item>
         </v-list>
       </v-navigation-drawer>
     </div>
@@ -54,9 +65,9 @@ export default {
     return {
       drawerOpen: false,
       pageLinks: [
-        {text: 'Portfolio',   linkTo: '/',      },
-        {text: 'About Me',    linkTo: '/about', },
-        {text: 'Blog',        linkTo: '/blog',  },
+        {text: 'Portfolio',   linkTo: '/',      icon: 'fas fa-briefcase'},
+        {text: 'About Me',    linkTo: '/about', icon: 'fas fa-address-card'},
+        {text: 'Blog',        linkTo: '/blog',  icon: 'fas fa-comments'},
       ]
     };
   },

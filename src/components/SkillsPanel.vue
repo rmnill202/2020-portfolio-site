@@ -9,6 +9,7 @@
           <div class="diamond-details">
             <div v-for="sub in s.sub"> {{sub}}</div>
           </div>
+          <div class="diamond-icon"><v-icon>fas fa-expand-arrows-alt</v-icon></div>
         </button>
       </div>
       
@@ -43,7 +44,7 @@ export default {
 .skill-grid {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(5, 160px);
+  grid-template-columns: repeat(3, 160px);
 }
 
 .skill-diamond-container {
@@ -51,6 +52,10 @@ export default {
   width: 0px;
   height: 150px;
   margin-top: -65px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .skill-diamond-container {
@@ -98,6 +103,23 @@ export default {
 }
 .skill-diamond:focus .diamond-text {
   color: rgba(255, 255, 255, 0);
+}
+
+.diamond-icon {
+  width: 150px;
+  margin-top: 110px;
+  padding-left: 25px;
+  padding-right: 25px;
+  position: absolute; 
+  top: 0;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.25s;
+
+  pointer-events: none;
+}
+.skill-diamond:focus .diamond-icon {
+  opacity: 0;
 }
 
 .diamond-details {
@@ -160,63 +182,59 @@ export default {
 @media screen and (min-width: 481px) {  
   
   .skill-diamond-container:nth-child(1) {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end:   3;
-    /* margin-top: -75px;
-    margin-right: 25px; */
+    grid-row-start:   1;
+    grid-row-end:     2;
   }
   .skill-diamond-container:nth-child(2) {
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-column-end:   4;
-
+    grid-row-start:   1;
+    grid-row-end:     2;
 
     margin-bottom: 5px;
   }
 
   .skill-diamond-container:nth-child(3) {
     grid-column-start: 1;
-    grid-column-end:   3;
-    grid-row-start:   2;
-    grid-row-end:     3;
+    grid-column-end:   2;
     /* margin-left: 15px; */
-
 
     margin-bottom: 25px;
   }
   .skill-diamond-container:nth-child(4) {
     grid-column-start: 2;
-    grid-column-end:   4;
-    grid-row-start:   2;
-    grid-row-end:     3;
+    grid-column-end:   3;
   }
   .skill-diamond-container:nth-child(5) {
     grid-column-start: 3;
-    grid-column-end:   5;
-    grid-row-start:   2;
-    grid-row-end:     3;
+    grid-column-end:   4;
     /* margin-bottom: 25px; */
   }
 
   .skill-diamond-container:nth-child(6) {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end:   3;
+    grid-row-start:   3;
+    grid-row-end:     4;
   }
   .skill-diamond-container:nth-child(7) {
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-column-end:   4;
+    grid-row-start:   3;
+    grid-row-end:     4;
   }
   .skill-diamond-container:nth-child(8) {
     grid-column-start: 1;
-    grid-column-end:   5;
+    grid-column-end:   4;
     /* margin-left: 20px; */
   }
 }
 
 /* Smaller screens */
 @media screen and (max-width: 599px) { 
-  .skill-grid {
-    grid-template-columns: repeat(5, 155px);
-  }
+
 
   .skill-diamond-container {
     margin-top: -70px;
@@ -226,12 +244,6 @@ export default {
 @media screen and (max-width: 480px) {
   .skill-grid {
     grid-template-columns: repeat(2, 150px);
-  }
-
-  .skill-diamond-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .skill-diamond-container {
