@@ -31,7 +31,7 @@
       </v-toolbar>
 
       <!-- Drawer - Mobile -->
-      <v-navigation-drawer v-model="drawerOpen" absolute temporary right>
+      <v-navigation-drawer v-model="drawerOpen" absolute temporary>
         <v-list> 
            <v-list-item >
             <v-list-item-content>
