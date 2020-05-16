@@ -3,14 +3,14 @@
     <div class="skill-grid">
 
       <div  v-for="(s, index) in skills" class="skill-diamond-container">
-        <button class="skill-diamond">
+        <div class="skill-diamond" :tabindex="index">
           <div :class="`diamond-fill fill-${s.v}`" :style="`background-color: ${s.color}`"/>
           <div class="diamond-text">{{s.title}}</div>
           <div class="diamond-details">
             <div v-for="sub in s.sub"> {{sub}}</div>
           </div>
           <div class="diamond-icon"><v-icon>fas fa-expand-arrows-alt</v-icon></div>
-        </button>
+        </div>
       </div>
       
 
