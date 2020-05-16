@@ -1,6 +1,7 @@
 const path = require('path');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Projects = require('./src/store/project_info.js');
+const Blogs = require('./src/store/blog_listing.js');
 
 // Change this
 const BASE_URL = '2020-portfolio-site';
@@ -25,6 +26,7 @@ module.exports = {
         '/about',
         '/blog',
         ...Projects.projects.map( proj => `/project/${proj.id}`),
+        ...Blogs.posts.map( post => `/blog/${post.id}`),
       ],
       useRenderEvent: true,
       headless: true,

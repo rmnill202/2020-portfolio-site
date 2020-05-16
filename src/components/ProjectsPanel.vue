@@ -150,7 +150,7 @@ export default {
 
 
 /** SMALLER SCRENS **/
-@media screen and (max-width: 1039px) and (min-width: 441px) {
+@media screen and (max-width: 1039px) and (min-width: 481px) {
   .project-grid {
     grid-template-columns: repeat(2, 210px);
   }
@@ -268,7 +268,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 480px) {
   .project-grid {
     grid-template-columns: repeat(3, 100px);
   }

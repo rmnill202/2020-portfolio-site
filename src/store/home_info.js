@@ -32,7 +32,13 @@ export default {
     {v: 4, color: '#82a97f', title: 'Stuff I Know Best',   sub: ['JavaScript,', 'Java,', 'C/C++,', 'Git,', 'Lucidchart', 'REST'] },
     {v: 3, color: '#917fa9', title: 'Stuff I Know Well',   sub: ['Python,', 'C#,', 'SVN', 'LaTeX', 'YAML, XML, etc'] },
     {v: 2, color: '#a97f7f', title: 'Stuff I\'ve Used',    sub: ['Ruby,', 'PHP', 'SQL'] },
-
-    
   ],
+
+  links: [
+    { title: 'GitHub', link: 'https://github.com/rmnill202/'},
+    { title: 'Twitter', link: 'https://twitter.com/rmnill202'},
+    { title: 'LinkedIn', link: 'https://www.linkedin.com/in/robert-nill-096b64112/'},
+    { title: 'Facebook', link: 'https://www.facebook.com/robert.m.nill'}
+    
+  ]
 };

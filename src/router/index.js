@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 
 import Projects from '../store/project_info.js';
+import Blogs from '../store/blog_listing.js';
 
 Vue.use(VueRouter);
 
@@ -29,7 +30,11 @@ const routes = [
     component: () => import(`../views/projects/P_${proj.id}.vue`)
   })),
   // Dynamically load blog posts
-  // TO DO
+  ...Blogs.posts.map( post =>({
+    path: `/blog/${post.id}`,
+    name: `blog-${post.id}`,
+    component: () => import(`../views/blogs/B_${post.id}.vue`)
+  })),
   
   // Fallback pages
   {
