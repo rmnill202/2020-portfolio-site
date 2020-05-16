@@ -237,7 +237,7 @@ export default {
 @keyframes star-anim-01 {
   0% {
     opacity: 0;
-    transform: translate(15px, 50px);
+    transform: translate(0px, 50px);
   }
   100% {
     opacity: 0.3;
@@ -248,7 +248,7 @@ export default {
 @keyframes star-anim-02 {
   0% {
     opacity: 0;
-    transform: translate(-15px, 25px);
+    transform: translate(0px, 25px);
   }
   100% {
     opacity: 0.15;

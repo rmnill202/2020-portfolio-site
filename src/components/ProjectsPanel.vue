@@ -4,7 +4,7 @@
     <div class="project-grid">
       <div class="project-diamond" v-for="(p, index) in projs"> 
 
-        <button class="project-diamond-clickable"> <!-- :style="`background-color: ${p.color}`" -->
+        <div class="project-diamond-clickable" :tabindex="1 + skill_len + index"> <!-- :style="`background-color: ${p.color}`" -->
         <!-- <button class="project-diamond-clickable" :style="`background-image: url(${require(`@/assets/${p.image}`)})`"> -->
           <div :class="`project-diamond-fill`" /> 
           <div class="project-diamond-title">{{p.title}}</div>
@@ -12,8 +12,8 @@
             {{p.summary}}
           </div>
           <div class="project-diamond-icon"><v-icon color="white">fas fa-plus-square</v-icon></div>
-        </button>
-        <v-btn class="project-diamond-link" :to="`/project/${p.id}`" tile depressed block>Read More Here</v-btn>
+        </div>
+        <v-btn class="project-diamond-link" :to="`/project/${p.id}`" tile depressed block tabindex="-1">Read More Here</v-btn>
       </div>
     </div>
   </div>
@@ -21,12 +21,14 @@
 
 <script>
 import ProjectInfo from '../store/project_info.js';
+import HomeInfo from '../store/home_info.js';
 
 export default {
   name: 'projects_panel',
   data() {
     return {
       projs: ProjectInfo.projects.slice().reverse(),
+      skill_len: HomeInfo.skills.length
     };
   },
   
@@ -71,16 +73,20 @@ export default {
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   background-size: 200px 200px;
   transition: all 0.75s;
+  cursor: pointer;
 }
 .project-diamond-clickable:hover {
   /* background-color: #332e2e; */
+  clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
+  transition: all 0.25s;
 }
 .project-diamond-clickable:focus { 
   clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%);
   z-index: 9998;
   border-color:transparent!important;
   outline:none;
-  pointer-events: none;
+  /* pointer-events: none; */
+  transition: all 0.5s;
 }
 .project-diamond-fill {
   background-color: #d2d2d2;
@@ -143,6 +149,12 @@ export default {
   color: rgba(255, 255, 255, 255);
 }
 
+@keyframes link-visibility-delayed {
+    0%    { visibility: hidden;  }
+    1%    { visibility: hidden;  }
+    100%  { visibility: visible; }
+}
+
 .project-diamond-link {
   position: absolute;
   bottom: -36px;
@@ -150,20 +162,23 @@ export default {
   left: 36px; */
   z-index: 9998;
   
-  clip-path: polygon(50% 50%,50% 50%,50% 50%,50% 50%);
+  /* clip-path: polygon(50% 0%,50% 50%,50% 50%,50% 50%); */
+  clip-path: polygon(0 0, 100% 0, 100% 1%, 0 1%); 
   transition: all 0.5s;
   transition-delay: 0.25s;
   filter: opacity(0%);
   width: 200px;
+  visibility: hidden;
 }
 .project-diamond-clickable:focus + .project-diamond-link {
-  pointer-events: all; 
   bottom: -36px;
   /* transform: rotate(-90deg);
   left: 36px; */
   
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
   filter: opacity(100%);
+  visibility: visible;
+  animation: link-visibility-delayed 0.25s linear;
 }
 
 

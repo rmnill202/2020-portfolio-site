@@ -3,7 +3,7 @@
     <div class="skill-grid">
 
       <div  v-for="(s, index) in skills" class="skill-diamond-container">
-        <div class="skill-diamond" :tabindex="index">
+        <div class="skill-diamond" :tabindex="1 + index">
           <div :class="`diamond-fill fill-${s.v}`" :style="`background-color: ${s.color}`"/>
           <div class="diamond-text">{{s.title}}</div>
           <div class="diamond-details">
@@ -74,10 +74,13 @@ export default {
   width:  150px;
   background-size: 150px 150px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
-  transition: all 0.5s;
+  cursor: pointer;
+  transition: all 0.25s;
 }
 .skill-diamond:hover {
   background-color: #c4c4c4;
+  clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
+  transition: all 0.25s;
 }
 .skill-diamond:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
@@ -85,6 +88,7 @@ export default {
   pointer-events: none; /* Allows the second click to de-focus */
   border-color:transparent!important;
   outline:none;
+  transition: all 0.5s;
 }
 
 
