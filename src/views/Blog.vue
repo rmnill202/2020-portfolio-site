@@ -5,7 +5,7 @@
       <div class="display-1">{{post.title}}</div>
       <div class="subtitle-1 post-date">{{post.date}}</div>
       <div class="blog-summary">{{post.summary}}</div>
-      <v-btn class="blog-button" :href="`/blog/${post.id}`">Read</v-btn>
+      <v-btn class="blog-button" :to="`/blog/${post.id}`">Read</v-btn>
     </div>
   </div>
 </template>
