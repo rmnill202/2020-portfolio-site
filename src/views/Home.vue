@@ -94,6 +94,12 @@ export default {
   pointer-events: none;
   top: 0;
   height: 100%;
+
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .project-bg {

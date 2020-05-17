@@ -5,7 +5,6 @@
       <div class="project-diamond" v-for="(p, index) in projs"> 
 
         <div class="project-diamond-clickable" :tabindex="1 + skill_len + index"> <!-- :style="`background-color: ${p.color}`" -->
-        <!-- <button class="project-diamond-clickable" :style="`background-image: url(${require(`@/assets/${p.image}`)})`"> -->
           <!-- <div :class="`project-diamond-fill`" />  -->
           <div class="project-diamond-title">{{p.title}}</div>
           <div class="project-diamond-details">
@@ -59,37 +58,29 @@ export default {
   align-items: center;
 }
 
-/* .project-diamond:hover .project-diamond-clickable {
-  background-color: blue;
-} */
 
 .project-diamond-clickable {
   position: absolute;
-  /* background-image: url('~@/assets/placeholder.jpeg'); */
   flex-direction: column;
   background-color: #5f5f5f;
   height: 200px;
   width:  200px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   background-size: 200px 200px;
-  /* transition: all 0.75s; */
-  transition: clip-path 0.75s, z-index 0.5s step-end;
+  transition: clip-path 0.5s, z-index 0.5s step-end;
   cursor: pointer;
   z-index: 1;
 }
 .project-diamond-clickable:hover {
-  /* background-color: #332e2e; */
   clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
   transition: clip-path 0.25s;
 }
 .project-diamond-clickable:focus { 
-  clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   z-index: 9998;
   border-color:transparent!important;
   outline:none;
-  /* pointer-events: none; */
-  /* transition: all 0.5s; */
-  transition: clip-path 0.5s, z-index 0.5s step-start;
+  transition: clip-path 0.25s, z-index 0.5s step-start;
 }
 .project-diamond-fill {
   background-color: #d2d2d2;
@@ -140,14 +131,13 @@ export default {
   pointer-events: none;
 }
 .project-diamond-clickable:hover .project-diamond-icon {
-  transition: transform 0.5s;
+  transition: transform 0.25s;
   transform: translate(0px, -8px);
 }
 .project-diamond-clickable:focus .project-diamond-icon {
   opacity: 0;
-  transition: transform 0.5s;
   transform: translate(0px, 15px) rotate(135deg);
-  transition: opacity 0.25s, transform 0.5s;
+  transition: opacity 0.25s, transform 0.25s;
   /* transform: translate(60px, 10px) rotate(45deg); */
   /* clip-path: polygon(50% 50%,50% 50%,50% 50%,50% 50%); */
 }

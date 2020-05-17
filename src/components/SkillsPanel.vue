@@ -4,10 +4,10 @@
 
       <div  v-for="(s, index) in skills" class="skill-diamond-container">
         <div class="skill-diamond" :tabindex="1 + index">
-          <div :class="`diamond-fill fill-${s.v}`" /> <!-- :style="`background-color: ${s.color}`" -->
+          <div :class="`diamond-fill-${s.v}`" /> <!-- :style="`background-color: ${s.color}`" -->
           <div class="diamond-text">{{s.title}}</div>
           <div class="diamond-details">
-            <div v-for="sub in s.sub"> {{sub}}</div>
+            <div> {{detailStr(s)}} </div>
           </div>
           <div class="diamond-icon"><v-icon>fas fa-plus</v-icon></div>
         </div>
@@ -29,6 +29,17 @@ export default {
       skills: HomeInfo.skills,
     };
   },
+  methods: {
+    detailStr(skill) {
+      let str = skill.sub[0];
+
+      for(let i = 1; i < skill.sub.length; i++) {
+        str += (`, ${skill.sub[i]}`);
+      }
+
+      return str;
+    }
+  }
   
 };
 </script>
@@ -78,6 +89,7 @@ export default {
   cursor: pointer;
   transition: clip-path 0.25s, z-index 0.05s step-end;
   z-index: 1;
+  will-change: clip-path, z-index;
 }
 .skill-diamond:hover {
   background-color: #c4c4c4;
@@ -104,6 +116,7 @@ export default {
   text-align: center;
   color: rgba(255, 255, 255, 255);
   transition: color 0.25s;
+  will-change: color;
 
   pointer-events: none;
   -webkit-user-select: none;
@@ -126,6 +139,7 @@ export default {
   text-align: center;
   opacity: 1;
   transition: transform 0.25s;
+  will-change: transform;
   transition-delay: 0.05s;
   pointer-events: none;
 }
@@ -147,6 +161,7 @@ export default {
   text-align: center;
   color: rgba(255, 255, 255, 0);
   transition: color 0.25s;
+  will-change: color;
   pointer-events: none;
   margin-top: 5px;
   -webkit-user-select: none;
@@ -155,58 +170,29 @@ export default {
   color: rgba(255, 255, 255, 255);
 }
 
-.fill-5 {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
-  /* clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%); */
-  
-  /* clip-path: polygon(-35% 115%, 115% -35%, 200% 50%, 50% 200%); */
-}
-
-.fill-4 {
-  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
-
-  /* clip-path: polygon(-45% 105%, 105% -45%, 200% 50%, 50% 200%); */
-  
-  /* clip-path: polygon(-35% 115%, 115% -35%, 200% 50%, 50% 200%); */
-}
-.fill-3 { 
-  clip-path: polygon(0 35%, 100% 35%, 100% 100%, 0 100%);
-
-
-  /* clip-path: polygon(-35% 115%, 115% -35%, 200% 50%, 50% 200%); */
-
-  
-  /* clip-path: polygon(-25% 125%, 125% -25%, 200% 50%, 50% 200%); */
-}
-.fill-2 { 
-  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
-  
-  /* clip-path: polygon(-25% 125%, 125% -25%, 200% 50%, 50% 200%); */
-  
-  /* clip-path: polygon(-15% 135%, 135% -15%, 200% 50%, 50% 200%); */
-}
-
-
-.skill-diamond:focus .fill-2, .skill-diamond:focus .fill-3, .skill-diamond:focus .fill-4 {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-  /* clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%); */
-
-  /* clip-path: polygon(-100% 50%, 50% -100%, 200% 50%, 50% 200%); */
-  
-}
-
-
-
-.diamond-fill {
+.diamond-fill-2, .diamond-fill-3, .diamond-fill-4 {
   background-color: #696969;
   height: 150px;
   width:  150px;
   background-size: 150px 150px;
   position: absolute;
   top: 0;
-  transition: all 0.5s;
+  transition: transform 0.5s;
+  will-change: transform;
+  /* transform: translate(0, 0); */
+}
+
+.diamond-fill-2 {
+  transform: translate(0, 100px);
+}
+
+.diamond-fill-3 {
+  transform: translate(0, 50px);
+}
+
+.skill-diamond:focus .diamond-fill-2, .skill-diamond:focus .diamond-fill-3, .skill-diamond:focus .diamond-fill-4 {
+  transform: translate(0, 0);
 }
 
 
@@ -219,22 +205,22 @@ export default {
   position: absolute;
   top: 5px;
   transition: clip-path 0.25s, z-index 0.05s step-end;
+  will-change: clip-path, z-index;
   clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
   z-index: 0;
   pointer-events: none;
 }
 .skill-diamond:hover + .diamond-shadow {
   clip-path: polygon(50% 10%,90% 50%,50% 90%,10% 50%); 
-  transition: all 0.25s;
+  transition: clip-path 0.25s, z-index 0.25s;
 }
 .skill-diamond:focus + .diamond-shadow {
   /* clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); */
   clip-path: polygon(0 10%, 100% 10%, 100% 100%, 0 100%); 
   /* animation: shadow-index-delay 0.25s linear; */
   /* z-index: 2; */
-  transition: all 0.25s, z-index 0.05s step-start;
+  transition: clip-path 0.25s, z-index 0.05s step-start;
   z-index: 9900;
-  top: 5px;
 }
 
 
