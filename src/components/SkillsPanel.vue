@@ -3,7 +3,6 @@
     <div class="skill-grid">
 
       <div  v-for="(s, index) in skills" class="skill-diamond-container">
-        <!-- <div class="diamond-shadow"></div> -->
         <div class="skill-diamond" :tabindex="1 + index">
           <div :class="`diamond-fill fill-${s.v}`" :style="`background-color: ${s.color}`"/>
           <div class="diamond-text">{{s.title}}</div>
@@ -12,6 +11,7 @@
           </div>
           <div class="diamond-icon"><v-icon>fas fa-expand-arrows-alt</v-icon></div>
         </div>
+        <div class="diamond-shadow"></div>
       </div>
       
 
@@ -76,13 +76,13 @@ export default {
   background-size: 150px 150px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   cursor: pointer;
-  transition: clip-path 0.25s, z-index 0.25s step-end;
+  transition: clip-path 0.25s, z-index 0.05s step-end;
   z-index: 1;
 }
 .skill-diamond:hover {
   background-color: #c4c4c4;
   clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
-  transition: all 0.25s;
+  transition: all 0.15s;
 }
 .skill-diamond:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
@@ -90,7 +90,7 @@ export default {
   pointer-events: none; /* Allows the second click to de-focus */
   border-color:transparent!important;
   outline:none;
-  transition: clip-path 0.25s, z-index 0.25s step-start;
+  transition: clip-path 0.25s, z-index 0.05s step-start;
 }
 
 
@@ -106,6 +106,8 @@ export default {
   transition: color 0.25s;
 
   pointer-events: none;
+  -webkit-user-select: none;
+  
 }
 .skill-diamond:focus .diamond-text {
   color: rgba(255, 255, 255, 0);
@@ -137,6 +139,7 @@ export default {
   transition: color 0.25s;
   pointer-events: none;
   margin-top: 5px;
+  -webkit-user-select: none;
 }
 .skill-diamond:focus .diamond-details {
   color: rgba(255, 255, 255, 255);
@@ -197,35 +200,31 @@ export default {
 }
 
 
-  
 
-/* @keyframes shadow-index-delay {
-    0%     { z-index: 1; }
-    99%    { z-index: 2; }
-    100%   { z-index: 2; }
-} */
-.diamond-shadow:first-child {
-  order: 2;
-}
 .diamond-shadow {
-  background-color: #252525;
-  height: 150px;
-  width:  150px;
-  background-size: 150px 150px;
+  background-color: #000000a6;
+  height: 160px;
+  width:  160px;
+  background-size: 160px 160px;
   position: absolute;
   top: 5px;
-  transition: all 0.25s;
-  clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
+  transition: clip-path 0.25s, z-index 0.05s step-end;
+  clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
+  z-index: 0;
+  pointer-events: none;
 }
 .skill-diamond:hover + .diamond-shadow {
-  clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
-  transition: all 0.25s;
+  clip-path: polygon(50% 10%,90% 50%,50% 90%,10% 50%); 
+  transition: all 0.15s;
 }
 .skill-diamond:focus + .diamond-shadow {
   /* clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); */
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+  clip-path: polygon(0 10%, 100% 10%, 100% 100%, 0 100%); 
   /* animation: shadow-index-delay 0.25s linear; */
   /* z-index: 2; */
+  transition: all 0.25s, z-index 0.05s step-start;
+  z-index: 9900;
+  top: 5px;
 }
 
 

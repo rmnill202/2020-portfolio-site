@@ -72,8 +72,10 @@ export default {
   width:  200px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   background-size: 200px 200px;
-  transition: all 0.75s;
+  /* transition: all 0.75s; */
+  transition: clip-path 0.75s, z-index 0.5s step-end;
   cursor: pointer;
+  z-index: 1;
 }
 .project-diamond-clickable:hover {
   /* background-color: #332e2e; */
@@ -86,7 +88,8 @@ export default {
   border-color:transparent!important;
   outline:none;
   /* pointer-events: none; */
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
+  transition: clip-path 0.5s, z-index 0.5s step-start;
 }
 .project-diamond-fill {
   background-color: #d2d2d2;
@@ -113,6 +116,7 @@ export default {
   color: rgba(255, 255, 255, 255);
   transition: color 0.25s;
   pointer-events: none;
+  -webkit-user-select: none;
 }
 .project-diamond-clickable:focus .project-diamond-title {
   color: rgba(255, 255, 255, 0);
@@ -144,6 +148,7 @@ export default {
   color: rgba(255, 255, 255, 0);
   transition: color 0.25s;
   pointer-events: none;
+  -webkit-user-select: none;
 }
 .project-diamond-clickable:focus .project-diamond-details {
   color: rgba(255, 255, 255, 255);
