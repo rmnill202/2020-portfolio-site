@@ -82,7 +82,7 @@ export default {
 .skill-diamond:hover {
   background-color: #c4c4c4;
   clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
-  transition: all 0.15s;
+  transition: all 0.25s;
 }
 .skill-diamond:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
@@ -215,7 +215,7 @@ export default {
 }
 .skill-diamond:hover + .diamond-shadow {
   clip-path: polygon(50% 10%,90% 50%,50% 90%,10% 50%); 
-  transition: all 0.15s;
+  transition: all 0.25s;
 }
 .skill-diamond:focus + .diamond-shadow {
   /* clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); */
