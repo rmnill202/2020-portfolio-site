@@ -10,7 +10,7 @@
           <div class="project-diamond-details">
             {{p.summary}}
           </div>
-          <div class="project-diamond-icon"><v-icon>fas fa-plus</v-icon></div>
+          <div class="project-diamond-icon"><v-icon class="icon-inner">fas fa-plus</v-icon></div>
         </div>
         <v-btn class="project-diamond-link" :to="`/project/${p.id}`" tile depressed block tabindex="-1">Read More Here</v-btn>
       </div>
@@ -62,7 +62,7 @@ export default {
 .project-diamond-clickable {
   position: absolute;
   flex-direction: column;
-  background-color: #5f5f5f;
+  background-color: var(--v-primary-base);
   height: 200px;
   width:  200px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
@@ -83,7 +83,7 @@ export default {
   transition: clip-path 0.25s, z-index 0.5s step-start;
 }
 .project-diamond-fill {
-  background-color: #d2d2d2;
+  background-color: var(--v-primary_accent_01-base);
   height: 200px;
   width:  200px;
   background-size: 200px 200px;
@@ -104,21 +104,25 @@ export default {
   position: absolute; 
   top: 0;
   text-align: center;
-  color: rgba(255, 255, 255, 255);
-  transition: color 0.25s;
+  color: var(--v-primary_text-base);
+  opacity: 1;
+  transition: opacity 0.25s;
   pointer-events: none;
   -webkit-user-select: none;
 }
 .project-diamond-clickable:focus .project-diamond-title {
-  color: rgba(255, 255, 255, 0);
+  opacity: 0;
 }
 
+.icon-inner {
+  color: var(--v-primary_icon_inner-base);
+}
 
 .project-diamond-icon {
   display: flex;
   justify-content: center;
   position: absolute; 
-  background-color: rgb(255, 255, 255);
+  background-color: var(--v-primary_icon-base);
   clip-path: polygon(50% 10%,90% 50%,50% 90%,10% 50%);
   width: 50px;
   height: 50px;
@@ -127,7 +131,7 @@ export default {
   text-align: center;
   opacity: 1;
   transition: transform 0.5s, opacity 0.5s;
-  transition-delay: 0.25s;
+  transition-delay: 0.15s;
   pointer-events: none;
 }
 .project-diamond-clickable:hover .project-diamond-icon {
@@ -148,13 +152,14 @@ export default {
   position: absolute; 
   top: 0;
   text-align: left;
-  color: rgba(255, 255, 255, 0);
-  transition: color 0.25s;
+  color: var(--v-primary_text-base);
+  opacity: 0;
+  transition: opacity 0.25s;
   pointer-events: none;
   -webkit-user-select: none;
 }
 .project-diamond-clickable:focus .project-diamond-details {
-  color: rgba(255, 255, 255, 255);
+  opacity: 1;
 }
 
 .project-diamond-link {

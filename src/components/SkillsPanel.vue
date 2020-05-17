@@ -9,7 +9,7 @@
           <div class="diamond-details">
             <div> {{detailStr(s)}} </div>
           </div>
-          <div class="diamond-icon"><v-icon>fas fa-plus</v-icon></div>
+          <div class="diamond-icon"><v-icon class="icon-inner">fas fa-plus</v-icon></div>
         </div>
         <div class="diamond-shadow"></div>
       </div>
@@ -81,7 +81,7 @@ export default {
   /* background-image: url('~@/assets/placeholder.jpeg'); */
   position: absolute;
   flex-direction: column;
-  background-color: #d2d2d2;
+  background-color: var(--v-primary_accent_01-base);
   height: 150px;
   width:  150px;
   background-size: 150px 150px;
@@ -92,7 +92,7 @@ export default {
   will-change: clip-path, z-index;
 }
 .skill-diamond:hover {
-  background-color: #c4c4c4;
+  background-color: var(--v-primary_accent_02-base);
   clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
   transition: all 0.25s;
 }
@@ -114,23 +114,28 @@ export default {
   position: absolute; 
   top: 0;
   text-align: center;
-  color: rgba(255, 255, 255, 255);
-  transition: color 0.25s;
-  will-change: color;
+  color: var(--v-primary_text-base);
+  transition: opacity 0.25s;
+  will-change: opacity;
+  opacity: 1;
 
   pointer-events: none;
   -webkit-user-select: none;
   
 }
 .skill-diamond:focus .diamond-text {
-  color: rgba(255, 255, 255, 0);
+  opacity: 0;
+}
+
+.icon-inner {
+  color: var(--v-primary_icon_inner-base);
 }
 
 .diamond-icon {
   display: flex;
   justify-content: center;
   position: absolute; 
-  background-color: rgb(255, 255, 255);
+  background-color: var(--v-primary_icon-base);
   clip-path: polygon(50% 10%,90% 50%,50% 90%,10% 50%);
   width: 50px;
   height: 50px;
@@ -159,20 +164,21 @@ export default {
   position: absolute; 
   top: 0;
   text-align: center;
-  color: rgba(255, 255, 255, 0);
-  transition: color 0.25s;
-  will-change: color;
+  color: var(--v-primary_text-base);
+  opacity: 0;
+  transition: opacity 0.25s;
+  will-change: opacity;
   pointer-events: none;
   margin-top: 5px;
   -webkit-user-select: none;
 }
 .skill-diamond:focus .diamond-details {
-  color: rgba(255, 255, 255, 255);
+  opacity: 1;
 }
 
 
 .diamond-fill-2, .diamond-fill-3, .diamond-fill-4 {
-  background-color: #696969;
+  background-color: var(--v-primary-base);
   height: 150px;
   width:  150px;
   background-size: 150px 150px;

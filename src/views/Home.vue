@@ -8,7 +8,7 @@
       <div class="bg-2"></div>
       <div class="bg-1"></div>
       <div class="stars-02"></div>
-      <div class="fill-back"><div style="height: 100%; background-color: black;"></div></div>
+      <div class="fill-back"><div class="fill-back-inner"></div></div>
     </div>
     
 
@@ -17,7 +17,7 @@
       <div class="homepage-intro">
         <div class="display-3 intro-name">Hi, I'm Robert Nill</div>
         <div class="headline">Software Engineer </div>
-        <v-btn tile depressed small class="resume-button" :href="`${publicPath}/2020_Nill_Software_Engineer_Resume.pdf`">View Resume (PDF)</v-btn>
+        <v-btn tile depressed small class="resume-button" color="primary" :href="`${publicPath}/2020_Nill_Software_Engineer_Resume.pdf`">View Resume (PDF)</v-btn>
       </div>
 
       <!-- Skillsets, looking for -->
@@ -27,7 +27,7 @@
 
       <!-- Portfolio -->
       <div class="homepage-portfolio">
-        <projects-panel/>
+        <projects-panel style="margin-bottom: 100px"/>
       </div>
 
       
@@ -188,7 +188,7 @@ export default {
   width: 100%;
   min-height: 500px;
 
-  background-color: #000;
+  background-color: var(--v-bg_accent_03-base);
 
   mask-image: url('~@/assets/m_bg_01.svg'), url('~@/assets/m_bg_01.svg');
   mask-repeat: repeat-x, repeat-x;
@@ -209,7 +209,7 @@ export default {
   width: 100%;
   min-height:500px;
 
-  background-color: #777;
+  background-color: var(--v-bg_accent_02-base);
 
   mask-image: url('~@/assets/m_bg_02.svg'), url('~@/assets/m_bg_02.svg');
   mask-repeat: repeat-x, repeat-x;
@@ -230,7 +230,7 @@ export default {
   width: 100%;
   min-height:500px;
 
-  background-color: #bbb;
+  background-color: var(--v-bg_accent_01-base);
 
   mask-image: url('~@/assets/m_bg_03.svg'), url('~@/assets/m_bg_03.svg');
   mask-repeat: repeat-x, repeat-x;
@@ -332,12 +332,11 @@ export default {
     padding-top: 900px;
 }
 
-
-.project-panel {
-  /* min-height: 500px; */
-  background-color: black;
-  margin-top: 250px;
+.fill-back-inner {
+  height: 100%;
+  background-color: var(--v-bg_accent_03-base);
 }
+
 
 /* Smaller Screens */
 @media screen and (max-width: 1039px) {

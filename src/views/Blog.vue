@@ -1,11 +1,11 @@
 <template>
   <div class="blog-posts" >
     <div class="blog-post-preview" v-for="post in posts" 
-      :style="`background-color: ${post.color}`">
+      :style="`background-color: var(--v-bg_accent_01-base);`">
       <div class="display-1">{{post.title}}</div>
       <div class="subtitle-1 post-date">{{post.date}}</div>
       <div class="blog-summary">{{post.summary}}</div>
-      <v-btn class="blog-button" :to="`/blog/${post.id}`">Read</v-btn>
+      <v-btn class="blog-button" color="primary" :to="`/blog/${post.id}`">Read</v-btn>
     </div>
   </div>
 </template>
