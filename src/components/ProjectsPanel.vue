@@ -154,12 +154,6 @@ export default {
   color: rgba(255, 255, 255, 255);
 }
 
-@keyframes link-visibility-delayed {
-    0%    { visibility: hidden;  }
-    1%    { visibility: hidden;  }
-    100%  { visibility: visible; }
-}
-
 .project-diamond-link {
   position: absolute;
   bottom: -36px;
@@ -183,7 +177,6 @@ export default {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
   filter: opacity(100%);
   visibility: visible;
-  animation: link-visibility-delayed 0.25s linear;
 }
 
 
