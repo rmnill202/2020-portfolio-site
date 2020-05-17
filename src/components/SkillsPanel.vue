@@ -9,7 +9,7 @@
           <div class="diamond-details">
             <div v-for="sub in s.sub"> {{sub}}</div>
           </div>
-          <div class="diamond-icon"><v-icon>fas fa-expand-arrows-alt</v-icon></div>
+          <div class="diamond-icon"><v-icon>fas fa-plus</v-icon></div>
         </div>
         <div class="diamond-shadow"></div>
       </div>
@@ -114,20 +114,35 @@ export default {
 }
 
 .diamond-icon {
-  width: 150px;
+  /* width: 150px;
   margin-top: 110px;
   padding-left: 25px;
-  padding-right: 25px;
+  padding-right: 25px; */
+  
+  display: flex;
+  justify-content: center;
   position: absolute; 
-  top: 0;
+  background-color: rgb(255, 255, 255);
+  clip-path: polygon(50% 10%,90% 50%,50% 90%,10% 50%);
+  width: 50px;
+  height: 50px;
+  margin-left: 50px;
+  bottom:0;
   text-align: center;
   opacity: 1;
-  transition: opacity 0.25s;
+  transition: all 0.25s;
 
   pointer-events: none;
 }
+.skill-diamond:hover .diamond-icon {
+  transition: all 0.25s;
+  bottom: 0px;
+}
 .skill-diamond:focus .diamond-icon {
-  opacity: 0;
+  /* opacity: 0; */
+  transition: all 0.25s;
+  transform: translate(60px, 10px) rotate(45deg);
+  /* clip-path: polygon(50% 50%,50% 50%,50% 50%,50% 50%); */
 }
 
 .diamond-details {
