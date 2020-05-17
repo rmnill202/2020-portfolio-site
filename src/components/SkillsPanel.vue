@@ -4,7 +4,7 @@
 
       <div  v-for="(s, index) in skills" class="skill-diamond-container">
         <div class="skill-diamond" :tabindex="1 + index">
-          <div :class="`diamond-fill fill-${s.v}`" :style="`background-color: ${s.color}`"/>
+          <div :class="`diamond-fill fill-${s.v}`" /> <!-- :style="`background-color: ${s.color}`" -->
           <div class="diamond-text">{{s.title}}</div>
           <div class="diamond-details">
             <div v-for="sub in s.sub"> {{sub}}</div>
@@ -114,11 +114,6 @@ export default {
 }
 
 .diamond-icon {
-  /* width: 150px;
-  margin-top: 110px;
-  padding-left: 25px;
-  padding-right: 25px; */
-  
   display: flex;
   justify-content: center;
   position: absolute; 
@@ -130,17 +125,17 @@ export default {
   bottom:0;
   text-align: center;
   opacity: 1;
-  transition: all 0.25s;
-
+  transition: transform 0.25s;
+  transition-delay: 0.05s;
   pointer-events: none;
 }
 .skill-diamond:hover .diamond-icon {
-  transition: all 0.25s;
-  bottom: 0px;
+  transition: transform 0.25s;
+  transform: translate(0px, -5px);
 }
 .skill-diamond:focus .diamond-icon {
   /* opacity: 0; */
-  transition: all 0.25s;
+  transition: transform 0.25s;
   transform: translate(60px, 10px) rotate(45deg);
   /* clip-path: polygon(50% 50%,50% 50%,50% 50%,50% 50%); */
 }
@@ -205,7 +200,7 @@ export default {
 
 
 .diamond-fill {
-  background-color: #82a97f;
+  background-color: #696969;
   height: 150px;
   width:  150px;
   background-size: 150px 150px;

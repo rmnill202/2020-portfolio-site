@@ -8,6 +8,7 @@
       <div class="bg-2"></div>
       <div class="bg-1"></div>
       <div class="stars-02"></div>
+      <div class="fill-back"><div style="height: 100%; background-color: black;"></div></div>
     </div>
     
 
@@ -17,10 +18,6 @@
         <div class="display-3 intro-name">Hi, I'm Robert Nill</div>
         <div class="headline">Software Engineer </div>
         <v-btn tile depressed small class="resume-button" :href="`${publicPath}/2020_Nill_Software_Engineer_Resume.pdf`">View Resume (PDF)</v-btn>
-        <!-- <div class="headline">Employment history</div> -->
-        <!-- <div v-for="e in info.prof_experience">{{e.date}} - {{e.title}}</div> -->
-        <!-- <div>TO DO - Resume link or history?</div> -->
-        
       </div>
 
       <!-- Skillsets, looking for -->
@@ -95,6 +92,8 @@ export default {
   position: absolute;
   width: 100%;
   pointer-events: none;
+  top: 0;
+  height: 100%;
 }
 
 .project-bg {
@@ -129,12 +128,13 @@ export default {
   height: 50px;
 }
 
-.bg-1 {
+/* .bg-1 {
   position: absolute;
   margin-top: 500px;
   top: 50px;
   width: 100%;
   min-height: 500px;
+  
   background-image: url('~@/assets/m_bg_01.svg'), url('~@/assets/m_bg_01.svg');
   background-repeat: repeat-x, repeat-x;
   background-position: center top, center top;
@@ -169,6 +169,73 @@ export default {
   background-size: 822px, 820px;
 
   animation: bg-anim-3 3.25s ease 1;
+} */
+
+
+
+/* Mask Based */
+
+.bg-1 {
+  position: absolute;
+  margin-top: 500px;
+  top: 50px;
+  width: 100%;
+  min-height: 500px;
+
+  background-color: #000;
+
+  mask-image: url('~@/assets/m_bg_01.svg'), url('~@/assets/m_bg_01.svg');
+  mask-repeat: repeat-x, repeat-x;
+  mask-position: center top, center top;
+  mask-size: 1122px, 1120px;
+
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: 1122px;
+  
+  animation: bg-anim-1 2s ease 1;
+}
+
+.bg-2 {
+  position: absolute;
+  margin-top: 500px;
+  top: 25px;
+  width: 100%;
+  min-height:500px;
+
+  background-color: #777;
+
+  mask-image: url('~@/assets/m_bg_02.svg'), url('~@/assets/m_bg_02.svg');
+  mask-repeat: repeat-x, repeat-x;
+  mask-position: center top, center top;
+  mask-size: 1022px, 1020px;
+
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: 1022px;
+
+  animation: bg-anim-2 2.5s ease 1;
+}
+
+.bg-3 {
+  position: absolute;
+  margin-top: 500px;
+  top: 0px;
+  width: 100%;
+  min-height:500px;
+
+  background-color: #bbb;
+
+  mask-image: url('~@/assets/m_bg_03.svg'), url('~@/assets/m_bg_03.svg');
+  mask-repeat: repeat-x, repeat-x;
+  mask-position: center top, center top;
+  mask-size: 822px, 820px;
+
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: 822px;
+
+  animation: bg-anim-3 3.25s ease 1;
 }
 
 
@@ -199,40 +266,6 @@ export default {
     transform: translate(0, 0);
   }
 }
-
-/* .bg-1 {
-  position: absolute;
-  top: 50px;
-  width: 100%;
-  min-height: 500px;
-  background-image: url('~@/assets/m_bg_01.svg'), url('~@/assets/m_bg_01.svg');
-  background-repeat: repeat-x, repeat-x;
-  background-position: center top, center top;
-  background-size: 1122px, 1120px;
-  
-}
-
-.bg-2 {
-  position: absolute;
-  top: 70px;
-  width: 100%;
-  min-height:500px;
-  background-image: url('~@/assets/m_bg_02.svg'), url('~@/assets/m_bg_02.svg');
-  background-repeat: repeat-x, repeat-x;
-  background-position: center top, center top;
-  background-size: 1022px, 1020px;
-}
-
-.bg-3 {
-  position: absolute;
-  top: 100px;
-  width: 100%;
-  min-height:500px;
-  background-image: url('~@/assets/m_bg_03.svg'), url('~@/assets/m_bg_03.svg');
-  background-repeat: repeat-x, repeat-x;
-  background-position: center top, center top;
-  background-size: 822px, 820px;
-} */
 
 @keyframes star-anim-01 {
   0% {
@@ -265,7 +298,7 @@ export default {
   background-position: center top;
   background-size: 1770px;
 
-  margin-top: 100px;
+  margin-top: 150px;
   opacity: 0.3;
   animation-delay: 0.5s;
   animation: star-anim-01 2.5s ease 1;
@@ -280,10 +313,17 @@ export default {
   background-position: center top;
   background-size: 1750px;
 
-  margin-top: 100px;
+  margin-top: 150px;
   opacity: 0.15;
   animation-delay: 0.25s;
   animation: star-anim-02 3.5s ease 1;
+}
+
+.fill-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-top: 900px;
 }
 
 

@@ -65,7 +65,7 @@ module.exports = {
         {text: '.NET & Azure',  icon: 'fab fa-microsoft'},
         {text: 'Mobile App',    icon: 'fas fa-mobile-alt'}
       ], 
-      summary: 'Mobile app for Wegmans employees to determine the root cause of empty shelves. Tiered architecture developed and maintained with Azure DevOps, with a mobile app based on C# and Xamarin.',
+      summary: 'Multi-tier system for Wegmans employees to determine the root cause of empty shelves. Built with Azure DevOps, C# and Xamarin.',
     },
 
     
