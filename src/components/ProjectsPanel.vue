@@ -81,6 +81,7 @@ export default {
   border-color:transparent!important;
   outline:none;
   transition: clip-path 0.25s, z-index 0.5s step-start;
+  cursor: default;
 }
 .project-diamond-fill {
   background-color: var(--v-primary_accent_01-base);
@@ -164,7 +165,7 @@ export default {
 
 .project-diamond-link {
   position: absolute;
-  bottom: 0px;
+  bottom: -36px;
   z-index: 9998;
   transition: filter 0.5s, visibility 0.5s;
   transition-delay: 0.25s;
@@ -173,7 +174,8 @@ export default {
   visibility: hidden;
 }
 .project-diamond-clickable:focus + .project-diamond-link {
-  bottom: 0px;
+  bottom: -36px;
+  z-index: 9999;
   filter: opacity(100%);
   visibility: visible;
 }
