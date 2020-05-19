@@ -13,6 +13,7 @@
           <div class="project-diamond-icon"><v-icon class="icon-inner">fas fa-plus</v-icon></div>
         </div>
         <v-btn class="project-diamond-link" :to="`/project/${p.id}`" tile depressed block tabindex="-1">Read More Here</v-btn>
+        <div class="diamond-closer"/>
       </div>
     </div>
   </div>
@@ -81,8 +82,21 @@ export default {
   border-color:transparent!important;
   outline:none;
   transition: clip-path 0.25s, z-index 0.5s step-start;
-  cursor: default;
+  /* cursor: default; */
 }
+
+.diamond-closer {
+  position: absolute;
+  height: 200px;
+  width:  200px;
+  pointer-events: none;
+}
+.project-diamond-clickable:focus ~ .diamond-closer {
+  pointer-events: all;
+  z-index: 10000;
+  cursor: pointer;
+}
+
 .project-diamond-fill {
   background-color: var(--v-primary_accent_01-base);
   height: 200px;

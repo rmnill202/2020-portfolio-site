@@ -12,6 +12,7 @@
           <div class="diamond-icon"><v-icon class="icon-inner">fas fa-plus</v-icon></div>
         </div>
         <div class="diamond-shadow"></div>
+        <div class="diamond-closer"/>
       </div>
       
 
@@ -99,10 +100,22 @@ export default {
 .skill-diamond:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
   z-index: 9999;
-  pointer-events: none; /* Allows the second click to de-focus */
+  /* pointer-events: none; Allows the second click to de-focus */
   border-color:transparent!important;
   outline:none;
   transition: clip-path 0.25s, z-index 0.05s step-start;
+}
+
+.diamond-closer {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  pointer-events: none;
+}
+.skill-diamond:focus ~ .diamond-closer {
+  pointer-events: all;
+  z-index: 10000;
+  cursor: pointer;
 }
 
 
