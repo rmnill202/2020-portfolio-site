@@ -12,7 +12,7 @@
           </div>
           <div class="project-diamond-icon"><v-icon class="icon-inner">fas fa-plus</v-icon></div>
         </div>
-        <v-btn class="project-diamond-link" :to="`/project/${p.id}`" tile depressed block tabindex="-1">Read More Here</v-btn>
+        <v-btn class="project-diamond-link" :to="`/project/${p.id}`" tile depressed block tabindex="-1" color="link_color">Read More Here</v-btn>
         <div class="diamond-closer"/>
       </div>
     </div>
@@ -68,21 +68,25 @@ export default {
   width:  200px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   background-size: 200px 200px;
-  transition: clip-path 0.5s, z-index 0.5s step-end;
+  /* transition: clip-path 0.5s, z-index 0.5s step-end; */
+  transition: clip-path 0.5s;
   cursor: pointer;
   z-index: 1;
 }
 .project-diamond-clickable:hover {
   clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
   transition: clip-path 0.25s;
+  /* background-color: var(--v-primary_accent_02-base); */
 }
 .project-diamond-clickable:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   z-index: 9998;
   border-color:transparent!important;
   outline:none;
-  transition: clip-path 0.25s, z-index 0.5s step-start;
+  /* transition: clip-path 0.25s, z-index 0.5s step-start; */
+  transition: clip-path 0.25s;
   /* cursor: default; */
+  background-color: var(--v-primary_accent_01-base);
 }
 
 .diamond-closer {
@@ -181,7 +185,7 @@ export default {
   position: absolute;
   bottom: -36px;
   z-index: 9998;
-  transition: filter 0.5s, visibility 0.5s;
+  transition: filter 0.25s ease-out, visibility 0.5s;
   transition-delay: 0.25s;
   filter: opacity(0%);
   width: 200px;

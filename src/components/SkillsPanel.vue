@@ -158,7 +158,7 @@ export default {
   opacity: 1;
   transition: transform 0.25s;
   will-change: transform;
-  transition-delay: 0.05s;
+  /* transition-delay: 0.05s; */
   pointer-events: none;
 }
 .skill-diamond:hover .diamond-icon {
@@ -182,7 +182,7 @@ export default {
   transition: opacity 0.25s;
   will-change: opacity;
   pointer-events: none;
-  margin-top: 5px;
+  padding: 5px;
   -webkit-user-select: none;
 }
 .skill-diamond:focus .diamond-details {
@@ -197,7 +197,7 @@ export default {
   background-size: 150px 150px;
   position: absolute;
   top: 0;
-  transition: transform 0.5s;
+  transition: transform 0.25s;
   will-change: transform;
   /* transform: translate(0, 0); */
 }

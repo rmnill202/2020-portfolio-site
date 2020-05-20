@@ -82,6 +82,7 @@ export default {
   grid-template-columns: 50% 50%;
   grid-template-rows: min-content min-content;
   max-width: 450px;
+  color: var(--v-bg_text-base);
 }
 .intro-name {
   grid-column-start: 1;

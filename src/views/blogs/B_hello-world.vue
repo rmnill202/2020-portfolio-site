@@ -29,11 +29,12 @@ export default {
 .blog-post-container {
   margin: 0 auto;
   max-width: 800px;
+  color: var(--v-bg_text-base);
 }
 
 .intro {
   text-align: center;
-  border-bottom-color: #ddd;
+  border-bottom-color: var(--v-primary-base);
   border-bottom-style: solid;
   padding-bottom: 15px;
 }
@@ -44,13 +45,13 @@ export default {
 
 @media screen and (max-width: 999px) { 
   .blog-post-container {
-    margin: 0 25px;
+    padding: 0 25px;
   }
 }
 
 @media screen and (max-width: 599px) { 
   .blog-post-container {
-    margin: 0 10px;
+    padding: 0 10px;
   }
 }
 
