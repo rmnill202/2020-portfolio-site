@@ -31,6 +31,7 @@ export default {
   max-width: 730px;
   margin: 0 auto 25px auto;
   padding: 0 15px 0 15px;
+  color: var(--v-bg_text-base);
 }
 
 .about-section {
@@ -45,6 +46,10 @@ export default {
 
 .link-section {
   text-align: center;
+}
+
+.link-section a {
+  color:var(--v-link_color-base);;
 }
 
 .about-title {
