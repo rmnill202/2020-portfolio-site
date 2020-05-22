@@ -131,9 +131,9 @@ module.exports = {
     },
 
     { 
-      id: 10,                   title: '2020 Portfolio & Blog', 
+      id: '2020-portfolio',     title: '2020 Portfolio & Blog', 
       image: '2020-site.png',   color: '#fff',
-      start_date: '04/20',      end_date: 'Now',
+      start_date: '05/20',      end_date: 'Now',
           
       project_url: 'https://rmnill202.github.io/711-raytracer',
       tags: [

@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .blog-posts {
   margin: 35px;
 }
@@ -33,7 +33,7 @@ export default {
   position: relative;
   color: var(--v-card_text-base);
   background-color: var(--v-card_background-base);
-  border-bottom-color: var(--v-primary-base);
+  border-bottom-color: var(--v-card_text-base);
   border-bottom-style: solid;
 }
 

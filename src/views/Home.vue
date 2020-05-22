@@ -10,14 +10,13 @@
       <div class="stars-02"></div>
       <div class="fill-back"><div class="fill-back-inner"></div></div>
     </div>
-    
 
     <div class="homepage-div">
       <!-- Intro - Statement, degrees -->
       <div class="homepage-intro">
-        <div class="display-3 intro-name">Hi, I'm Robert Nill</div>
-        <div class="headline">Software Engineer </div>
-        <v-btn tile depressed small class="resume-button" color="primary" :href="`${publicPath}/2020_Nill_Software_Engineer_Resume.pdf`">View Resume (PDF)</v-btn>
+        <div class="display-3 intro-name font-weight-thin">Hi, I'm Robert Nill</div>
+        <div class="headline font-weight-thin">Software Engineer </div>
+        <reg-btn class="resume-button" :linkTo="`${publicPath}/2020_Nill_Software_Engineer_Resume.pdf`" text="Resume"/> 
       </div>
 
       <!-- Skillsets, looking for -->
@@ -39,10 +38,12 @@
 import HomeInfo from '../store/home_info.js';
 import SkillsPanel from '../components/SkillsPanel.vue';
 import ProjectsPanel from '../components/ProjectsPanel.vue';
+import NavBtn from '../components/NavBtn.vue';
+import RegBtn from '../components/RegBtn.vue';
 
 export default {
   name: 'home',
-  components: { SkillsPanel, ProjectsPanel },
+  components: { SkillsPanel, ProjectsPanel, NavBtn, RegBtn },
   data() {
     return {
       info: HomeInfo,
@@ -55,7 +56,7 @@ export default {
 <style>
 /* Assume default styling applies to larger screens */
 .homepage-div {
-  display: grid;
+  /* display: grid; */
   row-gap: 25px;
 
   grid-template-columns: 45% 5% 50%;
@@ -83,6 +84,9 @@ export default {
   grid-template-rows: min-content min-content;
   max-width: 450px;
   color: var(--v-bg_text-base);
+
+  margin: auto;
+  margin-bottom: 200px;
 }
 .intro-name {
   grid-column-start: 1;
@@ -201,6 +205,7 @@ export default {
   background-size: 1122px;
   
   animation: bg-anim-1 2s ease 1;
+  /* transform: scale(2, 1); */
 }
 
 .bg-2 {
@@ -222,6 +227,7 @@ export default {
   background-size: 1022px;
 
   animation: bg-anim-2 2.5s ease 1;
+  /* transform: scale(2, 1); */
 }
 
 .bg-3 {
@@ -243,6 +249,7 @@ export default {
   background-size: 822px;
 
   animation: bg-anim-3 3.25s ease 1;
+  /* transform: scale(2, 1); */
 }
 
 
@@ -305,10 +312,11 @@ export default {
   background-position: center top;
   background-size: 1770px;
 
-  margin-top: 150px;
+  margin-top: 0px;
   opacity: 0.3;
   animation-delay: 0.5s;
   animation: star-anim-01 2.5s ease 1;
+  filter: invert() opacity(0.5);
 }
 
 .stars-02 {
@@ -320,10 +328,11 @@ export default {
   background-position: center top;
   background-size: 1750px;
 
-  margin-top: 150px;
+  margin-top: 0px;
   opacity: 0.15;
   animation-delay: 0.25s;
   animation: star-anim-02 3.5s ease 1;
+  filter: invert() opacity(0.5);
 }
 
 .fill-back {
@@ -349,6 +358,7 @@ export default {
 
   .homepage-intro {
     margin: 0px auto;
+    margin-bottom: 200px;
   }
 
   .homepage-skills, .homepage-portfolio {
@@ -362,6 +372,7 @@ export default {
 @media screen and (max-width: 599px) { 
   .homepage-intro {
     grid-template-columns: 100%;
+    margin-bottom: 150px;
   }
   .intro-name {
     grid-column-start: 1;
@@ -369,12 +380,15 @@ export default {
   }
   .resume-button {
     margin: auto;
+    justify-self: center;
+    width: 150px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .homepage-intro {
     max-width: 300px;
+    margin-bottom: 150px;
   }
 }
 </style>

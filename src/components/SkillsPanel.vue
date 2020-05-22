@@ -141,7 +141,7 @@ export default {
 }
 
 .icon-inner {
-  color: var(--v-primary_icon_inner-base);
+  color: var(--v-primary_icon_inner-base) !important;
 }
 
 .diamond-icon {

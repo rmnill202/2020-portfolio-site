@@ -12,7 +12,7 @@
           </div>
           <div class="project-diamond-icon"><v-icon class="icon-inner">fas fa-plus</v-icon></div>
         </div>
-        <v-btn class="project-diamond-link" :to="`/project/${p.id}`" tile depressed block tabindex="-1" color="link_color">Read More Here</v-btn>
+        <router-btn class="project-diamond-link" :router='true' :linkTo="`/project/${p.id}`" text="Read More Here" tile depressed block tabindex="-1"/>
         <div class="diamond-closer"/>
       </div>
     </div>
@@ -22,9 +22,11 @@
 <script>
 import ProjectInfo from '../store/project_info.js';
 import HomeInfo from '../store/home_info.js';
+import RouterBtn from './RouterBtn.vue';
 
 export default {
   name: 'projects_panel',
+  components: { RouterBtn },
   data() {
     return {
       projs: ProjectInfo.projects.slice().reverse(),
@@ -39,13 +41,13 @@ export default {
 .projects-panel-div {
   display: flex;
   justify-content: center;
-  margin-top: -120px;
+  margin-top: 120px;
 }
 
 .project-grid {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(5, 205px);
+  grid-template-columns: repeat(3, 205px);
   /* margin-right: 200px; */
 }
 
@@ -246,66 +248,67 @@ export default {
 /** LARGER SCREENS **/
 @media screen and (min-width: 1040px) {
   .project-diamond:nth-child(3n + 1) {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end:   4;
   }
   .project-diamond:nth-child(3n + 2) {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end:   3;
   }
   .project-diamond:nth-child(3n + 0) {
     grid-column-start: 3;
     grid-column-end:   4;
+    margin-left: -205px;
   }
 
   .project-diamond:nth-child(1) {
     grid-column-start: 1;
-    grid-column-end:   5;
-    margin-bottom: 150px;
+    grid-column-end:   4;
+    margin-bottom: 100px;
     margin-right: 150px;
   }
 
   .project-diamond:nth-child(2) {
     grid-column-start: 1;
-    grid-column-end:   5;
+    grid-column-end:   4;
     margin-bottom: 100px;
-    margin-right: 450px;
+    margin-left: 150px;
   }
 
   .project-diamond:nth-child(3) {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end:   3;
     margin-top: -130px;
     margin-right: 10px;
+    margin-left: 0px;
+    grid-row-start: 3;
+    grid-row-end:   4;
   }
 
   .project-diamond:nth-child(4) {
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-column-end:   4;
     margin-bottom: 20px;
     margin-right: 10px;
+    grid-row-start: 3;
+    grid-row-end:   4;
   }
 
   .project-diamond:nth-child(5) {
     grid-column-start: 1;
-    grid-column-end:   3;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-end:   2;
     margin-top: -105px;
     margin-right: 35px;
   }
   .project-diamond:nth-child(6) {
     grid-column-start: 2;
-    grid-column-end:   4;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-end:   3;
     margin-top: -100px;
+    margin-left: 0px;
   }
   .project-diamond:nth-child(7) {
     grid-column-start: 3;
-    grid-column-end:   5;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-end:   4;
     margin-bottom: 5px;
   }
   .project-diamond:nth-child(10) {
