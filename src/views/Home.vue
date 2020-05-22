@@ -7,7 +7,6 @@
       <div class="bg-3"></div>
       <div class="bg-2"></div>
       <div class="bg-1"></div>
-      <div class="stars-02"></div>
       <div class="fill-back"><div class="fill-back-inner"></div></div>
     </div>
 
@@ -195,10 +194,10 @@ export default {
 
   background-color: var(--v-bg_accent_03-base);
 
-  mask-image: url('~@/assets/m_bg_01.svg'), url('~@/assets/m_bg_01.svg');
-  mask-repeat: repeat-x, repeat-x;
-  mask-position: center top, center top;
-  mask-size: 1122px, 1120px;
+  mask-image: url('~@/assets/bg_01.png');
+  mask-repeat: repeat-x;
+  mask-position: center top;
+  mask-size: 1122px;
 
   background-repeat: repeat-x;
   background-position: center top;
@@ -217,10 +216,10 @@ export default {
 
   background-color: var(--v-bg_accent_02-base);
 
-  mask-image: url('~@/assets/m_bg_02.svg'), url('~@/assets/m_bg_02.svg');
-  mask-repeat: repeat-x, repeat-x;
-  mask-position: center top, center top;
-  mask-size: 1022px, 1020px;
+  mask-image: url('~@/assets/bg_02.png');
+  mask-repeat: repeat-x;
+  mask-position: center top;
+  mask-size: 1022px;
 
   background-repeat: repeat-x;
   background-position: center top;
@@ -239,10 +238,10 @@ export default {
 
   background-color: var(--v-bg_accent_01-base);
 
-  mask-image: url('~@/assets/m_bg_03.svg'), url('~@/assets/m_bg_03.svg');
-  mask-repeat: repeat-x, repeat-x;
-  mask-position: center top, center top;
-  mask-size: 822px, 820px;
+  mask-image: url('~@/assets/bg_03.png');
+  mask-repeat: repeat-x;
+  mask-position: center top;
+  mask-size: 822px;
 
   background-repeat: repeat-x;
   background-position: center top;
@@ -307,7 +306,7 @@ export default {
   position: absolute;
   width: 100%;
   min-height: 700px;
-  background-image: url('~@/assets/Stars_01.png');
+  background-image: url('~@/assets/stars_t.png');
   background-repeat: repeat-x;
   background-position: center top;
   background-size: 1770px;
@@ -316,23 +315,7 @@ export default {
   opacity: 0.3;
   animation-delay: 0.5s;
   animation: star-anim-01 2.5s ease 1;
-  filter: invert() opacity(0.5);
-}
-
-.stars-02 {
-  position: absolute;
-  width: 100%;
-  min-height: 700px;
-  background-image: url('~@/assets/Stars_s.png');
-  background-repeat: repeat;
-  background-position: center top;
-  background-size: 1750px;
-
-  margin-top: 0px;
-  opacity: 0.15;
-  animation-delay: 0.25s;
-  animation: star-anim-02 3.5s ease 1;
-  filter: invert() opacity(0.5);
+  /* filter: invert() opacity(0.5); */
 }
 
 .fill-back {

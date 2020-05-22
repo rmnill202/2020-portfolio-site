@@ -48,6 +48,9 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL, // Needs to be set since the vue.config.js publicpath has been changed according to: 
   routes,                     // https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 };
+  }
 });
 
 export default router;

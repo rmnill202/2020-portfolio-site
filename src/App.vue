@@ -4,20 +4,16 @@
     <!-- <v-app style="background: linear-gradient(180deg, rgba(223,152,70,1) 0%, rgb(223, 70, 70) 33%);"> -->
   <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 33%);">
 
-      
-    
-
     <!-- Navigation -->
-    <div > <!-- style="position: sticky; top: 0" -->
+    <div> <!-- style="position: sticky; top: 0" -->
       <div style="text-align: center; margin-bottom: 50px; margin-top: 50px">
         <nav-btn v-for="l in pageLinks" :linkTo="l.linkTo" :text="l.text"/>
       </div>
     </div>
 
-
     <!-- Page Contents -->
     <router-view/>
-
+    
   </v-app>
 </template>
 
