@@ -21,7 +21,8 @@ export default {
   display: inline-block;
   position: relative;
   text-decoration: none;
-  color: var(--v-primary_icon_inner-base);
+  color: var(--v-primary_text-base);
+  background-color: var(--v-card_accent_3-base);
   padding-left:  7px;
   padding-right: 7px;
   text-align: center;
@@ -38,7 +39,7 @@ export default {
   content: "";
   position: absolute;
   display: block;
-  background-color: var(--v-primary_icon-base);
+  background-color: var(--v-card_accent-base);
 }
 
 .anim-border::before {
@@ -48,7 +49,7 @@ export default {
   left: 0px;
 
   /* Bezier curves! */
-  transform: scaleX(0.9);
+  transform: scaleX(1);
   /* opacity: 0.9; */
   transform-origin: top;
   transition: transform 0.25s ease, opacity 0.25s ease;

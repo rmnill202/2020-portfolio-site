@@ -1,13 +1,19 @@
 <template>
+<div>
+  <div class="about-background"></div>
   <div class="blog-posts" >
-    <div class="blog-post-preview" v-for="post in posts">
-      <div class="display-1">{{post.title}}</div>
-      <div class="subtitle-1 post-date">{{post.date}}</div>
-      <div class="blog-summary">{{post.summary}}</div>
-      <!-- <v-btn class="blog-button" color="primary" :to="`/blog/${post.id}`">Read</v-btn> -->
-      <router-btn class="blog-button" color="primary" :linkTo="`/blog/${post.id}`" text="Read"></router-btn>
+    <div class="blog-post-wrapper" v-for="post in posts">
+      <div class="blog-post-preview">
+        <div class="display-1">{{post.title}}</div>
+        <div class="subtitle-1 post-date">{{post.date}}</div>
+        <div class="blog-summary">{{post.summary}}</div>
+        <!-- <v-btn class="blog-button" color="primary" :to="`/blog/${post.id}`">Read</v-btn> -->
+        <router-btn class="blog-button" color="primary" :linkTo="`/blog/${post.id}`" text="Read"></router-btn>
+      </div>
     </div>
   </div>
+
+</div>
 </template>
 
 <script>
@@ -27,17 +33,28 @@ export default {
 
 <style scoped>
 .blog-posts {
-  margin: 35px;
+  padding: 35px;
+  position: relative;
 }
 
 .blog-post-preview {
-  max-width: 500px;
+  /* max-width: 500px;
+  width: 100%; */
   padding: 15px;
   position: relative;
   color: var(--v-card_text-base);
   background-color: var(--v-card_background-base);
-  border-bottom-color: var(--v-card_accent-base);
-  border-bottom-style: solid;
+  /*border-bottom-color: var(--v-card_accent-base);
+  border-bottom-style: solid; */
+  /* linear-gradient(90deg, rgba(5,54,105,1) 0%, rgba(223,70,70,1) 50%); */
+}
+
+.blog-post-wrapper {
+  display: inline-block;
+  padding: 1px 2px 2px 1px;
+  background: linear-gradient(175deg, rgba(5,54,105,0.35) 0%, rgba(223,70,70,0.35) 100%);
+  max-width: 500px;
+  width: 100%;
 }
 
 .post-date {
@@ -52,14 +69,34 @@ export default {
   bottom: 15px;
   width: 100px;
   color: var(--v-card_text-base);
+  background-color: var(--v-card_accent_2-base);
 }
 
 .blog-button::before {
   background-color: var(--v-card_accent-base);
+  transform: scaleX(1.0);
 }
 
 .blog-summary {
   margin-top: 10px;
+}
+
+.about-background {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  min-height: 300px;
+
+  background-color: var(--v-bg_accent_03-base);
+
+  mask-image: url('~@/assets/bg_01.png');
+  mask-repeat: repeat-x;
+  mask-position: center top;
+  mask-size: 1022px;
+
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: 1022px;
 }
 
 @media screen and (max-width: 599px) { 

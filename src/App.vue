@@ -2,7 +2,7 @@
   <!-- <v-app style="background-color: var(--v-background-base)"> -->
   <!-- <v-app style="background: linear-gradient(180deg, rgba(223,152,70,1) 0%, rgba(223,70,125,1) 33%);"> -->
     <!-- <v-app style="background: linear-gradient(180deg, rgba(223,152,70,1) 0%, rgb(223, 70, 70) 33%);"> -->
-  <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 33%);">
+  <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 500px);">
 
     <!-- Navigation -->
     <div> <!-- style="position: sticky; top: 0" -->

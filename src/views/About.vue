@@ -1,7 +1,5 @@
 <template>
   <div style="position: relative; height: 100%">
-    <div class="left-background"></div>
-    <div class="right-background"></div>
     <div class="about-background"></div>
     <div class="about-page">
       <div class="display-2 about-title font-weight-thin">Howdy!</div>
@@ -61,15 +59,6 @@ export default {
   margin-bottom: 25px;
 }
 
-/* @keyframes fade-in-anim {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
-
 .about-background {
   position: absolute;
   bottom: 0px;
@@ -86,44 +75,7 @@ export default {
   background-repeat: repeat-x;
   background-position: center top;
   background-size: 1022px;
-  
-  /* animation: fade-in-anim 0.25s ease 1; */
 }
 
-/* .left-background {
-  position: absolute;
-  left: -375px;
-  height: 100%; 
-  min-width: 600px;
-
-  background-color: var(--v-bg_accent_02-base);
-
-  mask-image: url('~@/assets/bg_02.png');
-  mask-repeat: repeat-y;
-  mask-position: left top;
-  mask-size: 522px;
-
-  background-repeat: repeat-y;
-  background-position: left top;
-  background-size: 522px;
-}
-
-.right-background {
-  position: absolute;
-  right: 0px;
-  height: 100%; 
-  min-width: 150px;
-
-  background-color: var(--v-bg_accent_02-base);
-
-  mask-image: url('~@/assets/bg_02.png');
-  mask-repeat: repeat-y;
-  mask-position: left top;
-  mask-size: 522px;
-
-  background-repeat: repeat-y;
-  background-position: left top;
-  background-size: 522px;
-} */
 
 </style>
