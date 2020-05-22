@@ -12,7 +12,7 @@
         <div class="headline">{{info.start_date}} - {{info.end_date}}</div>
         <div class="icon-container">
           <div class="tag-icon body-2" v-for="tag in info.tags">
-            {{tag.text}} <v-icon small style="margin-left: 5px">{{tag.icon}}</v-icon>
+            {{tag.text}} <v-icon small class="tag-icon-inner">{{tag.icon}}</v-icon>
           </div>
         </div>
       </div>
@@ -55,6 +55,7 @@ export default {
   background-image: url('~@/assets/cat_03.jpg');
   background-position: center center;
   background-size: cover; /* contain or cover */
+  color: white;
 }
 
 .proj-description {
@@ -62,6 +63,9 @@ export default {
   position: relative;
   margin-right: 15px;
   margin-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.075);
+  color: white;
+  font-weight: 300;
 }
 
 .proj-background {
@@ -108,8 +112,13 @@ export default {
 .tag-icon {
   display: inline-block;
   padding: 5px;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.527);
   margin: 5px 5px 0px 0px;
+}
+
+.tag-icon-inner {
+  margin-left: 5px;
+  color: #fff !important;
 }
 
 @media screen and (max-width: 1039px) { 

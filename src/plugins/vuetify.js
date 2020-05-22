@@ -38,6 +38,7 @@ export default new Vuetify({
 
         card_background:    '#443a5e',
         card_text:          '#fff',
+        card_accent:        '#df4646',
         navbar_color:       '#984cad',
         navbar_text:        '#fff',
         link_color:         '#fff',
