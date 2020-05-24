@@ -4,8 +4,7 @@
     <div class="project-grid">
       <div class="project-diamond" v-for="(p, index) in projs"> 
 
-        <div class="project-diamond-clickable" :tabindex="1 + skill_len + index"> <!-- :style="`background-color: ${p.color}`" -->
-          <!-- <div :class="`project-diamond-fill`" />  -->
+        <div class="project-diamond-clickable" :tabindex="1 + skill_len + index" :style="proj_styles(p)"> 
           <div class="project-diamond-title">{{p.title}}</div>
           <div class="project-diamond-details">
             {{p.summary}}
@@ -30,10 +29,15 @@ export default {
   data() {
     return {
       projs: ProjectInfo.projects.slice().reverse(),
-      skill_len: HomeInfo.skills.length
+      skill_len: HomeInfo.skills.length,
     };
   },
-  
+  methods: {
+    proj_styles(p) {
+      // return { '--bg-icon': `url(${require(`@/assets/${p.image}`)})` };
+      return { };
+    }
+  }
 };
 </script>
 
@@ -70,7 +74,9 @@ export default {
   width:  200px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   background-size: 200px 200px;
-  /* transition: clip-path 0.5s, z-index 0.5s step-end; */
+  /* background-image: var(--bg-icon); */
+  background-position: center center;
+  background-size: cover; 
   transition: clip-path 0.5s;
   cursor: pointer;
   z-index: 1;
@@ -86,6 +92,7 @@ export default {
   border-color:transparent!important;
   outline:none;
   /* transition: clip-path 0.25s, z-index 0.5s step-start; */
+  /* background-image: none; */
   transition: clip-path 0.25s;
   /* cursor: default; */
   background-color: var(--v-primary_accent_01-base);

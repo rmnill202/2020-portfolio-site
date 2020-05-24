@@ -1,12 +1,12 @@
 <template>
   <div>
-    Eighth project
+    TO DO
   </div>
 </template>
 
 <script>
 export default {
-  name: 'P_8',
+  name: 'P_tangible-ar',
   data() {
     return {
 

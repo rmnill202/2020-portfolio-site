@@ -3,12 +3,12 @@
     <div class="intro">
       <div class="display-2 font-weight-thin">{{post.title}}</div>
       <div class="headline font-weight-light post-date">{{post.date}}</div>
-      <div class="subtitle font-weight-light">{{post.summary}}</div>
+      <div class="title font-weight-light">{{post.summary}}</div>
     </div>
     
-    <div class="blog-sec font-weight-light">I've been thinking about making a blog for quite a while now, and I guess this is the best time to do it! There's a lot of stuff that I'm passionate about, whether or not that stuff is related to my profession, and it might be cool to have a place to capture my interests, thoughts and moods. </div>
+    <p class="blog-sec font-weight-light">I've been thinking about making a blog for quite a while now, and I guess this is the best time to do it! There's a lot of stuff that I'm passionate about, whether or not that stuff is related to my profession, and it might be cool to have a place to capture my interests, thoughts and moods. </p>
 
-    <div class="blog-sec font-weight-light">My hopes are that this place becomes (1) something I can share with people, and (2) something I can look back on like a journal. I'll also be posting some  project summaries under the portfolio/homepage of the website; personal projects, classwork, professional experiences. That's still in progress as well, but I should probably host this site ASAP anyways!</div>
+    <p class="blog-sec font-weight-light">My hopes are that this place becomes (1) something I can share with people, and (2) something I can look back on like a journal. I'll also be posting some  project summaries under the portfolio/homepage of the website; personal projects, classwork, professional experiences. That's still in progress as well, but I should probably host this site ASAP anyways!</p>
   </div>
 </template>
 
@@ -46,6 +46,12 @@ export default {
 .post-date {
   margin-top: 25px;
   margin-bottom: 5px;
+}
+
+p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /* font-size: 1.2rem; */
 }
 
 @media screen and (max-width: 999px) { 

@@ -13,8 +13,8 @@ export default new Vuetify({
       light: {
         primary:            '#984cad',
 
-        primary_accent_01:  '#984cad',
-        primary_accent_02:  '#984cad',
+        primary_accent_01:  '#723982',
+        primary_accent_02:  '#60306e',
         
         primary_text:       '#ffffff',
         // primary_icon:       '#df9646',

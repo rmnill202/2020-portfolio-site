@@ -1,12 +1,12 @@
 <template>
   <div>
-    Ninth project
+    TO DO
   </div>
 </template>
 
 <script>
 export default {
-  name: 'P_9',
+  name: 'P_tigercenter',
   data() {
     return {
 

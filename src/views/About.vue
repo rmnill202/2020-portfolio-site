@@ -3,9 +3,9 @@
     <div class="about-background"></div>
     <div class="about-page">
       <div class="display-2 about-title font-weight-thin">Howdy!</div>
-      <div class="about-section">Studied Software Engineering (BS) and Computer Science (MS) at RIT between 2015 and 2020. </div>
-      <div class="about-section">Passionate about web development, software architecture/design and graphics programming. </div>
-      <div class="about-section">My hobbies outside of software development include music performance, movies and cooking. </div>
+      <div class="about-section font-weight-light">Studied Software Engineering (BS) and Computer Science (MS) at RIT between 2015 and 2020. </div>
+      <div class="about-section font-weight-light">Passionate about web development, software architecture/design and graphics programming. </div>
+      <div class="about-section font-weight-light">My hobbies outside of software development include music performance, movies and cooking. </div>
       <div class="about-section-2 headline">Currently looking for work as of May 2020</div>
 
       <div class="link-section" v-for="site in info.links"><a :href="site.link">{{site.title}}</a></div>

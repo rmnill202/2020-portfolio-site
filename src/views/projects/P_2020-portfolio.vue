@@ -1,40 +1,55 @@
 <template>
-  <div style="position: relative; height: 100%;">
-
-    <!-- Background -->
-    <!-- <div class="proj-background"/> -->
+  <blog-styles>
     
     <!-- Page contents -->
     <div class="proj-description">
       <!-- Title Card -->
       <div class="proj-card">
-        <div class="display-2">{{info.title}}</div>
-        <div class="headline">{{info.start_date}} - {{info.end_date}}</div>
+        <div class="display-2 font-weight-light">{{info.title}}</div>
+        <div class="headline font-weight-light">{{info.start_date}} - {{info.end_date}}</div>
         <div class="icon-container">
-          <div class="tag-icon body-2" v-for="tag in info.tags">
+          <div class="tag-icon body-2 " v-for="tag in info.tags">
             {{tag.text}} <v-icon small class="tag-icon-inner">{{tag.icon}}</v-icon>
           </div>
         </div>
       </div>
 
       <!-- Project Summary -->
-      <div class="headline section-title">Section Title</div>
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat magna, dignissim ac accumsan id, vehicula vitae nulla. Praesent in imperdiet tellus. Cras eleifend, mi sed ornare tincidunt, mi velit fermentum est, eu varius lacus felis et dolor. Vivamus interdum sit amet tortor nec tristique. Nam ut vestibulum felis. Aliquam urna mauris, convallis at lorem sed, auctor cursus risus. Maecenas efficitur eget est sed sagittis. In eu molestie mi, in laoreet leo. Cras gravida pharetra turpis, ac porttitor tortor laoreet quis. Praesent consequat porta dui sit amet ultricies. Vestibulum bibendum augue non purus laoreet, at bibendum odio fermentum.</div>
-
-      <div class="section-left-image">
-        <img class="proj-img" :src="require(`@/assets/cat_03.jpg`)" />
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat magna, dignissim ac accumsan id, vehicula vitae nulla. Praesent in imperdiet tellus. Cras eleifend, mi sed ornare tincidunt, mi velit fermentum est, eu varius lacus felis et dolor. Vivamus interdum sit amet tortor nec tristique. Nam ut vestibulum felis. Aliquam urna mauris, convallis at lorem sed, auctor cursus risus. Maecenas efficitur eget est sed sagittis. In eu molestie mi, in laoreet leo. Cras gravida pharetra turpis, ac porttitor tortor laoreet quis. Praesent consequat porta dui sit amet ultricies. Vestibulum bibendum augue non purus laoreet, at bibendum odio fermentum.</div>
+      <div class="desc-section">
+        <div class="display-1 section-title font-weight-light">New Decade, New Website</div>
+        <p>A new decade has begun, and with graduation in sight a new website seemed to be in order. Carrying over the same geometric motif from its previous iteration, this website adds a more thought out color schemed and foregoes the SPA style in favor of simpler and smaller pages.</p>
+        <p>With this website, I wanted to expand upon the aesthetics and flesh out the interactive elements. By adding various animations and experimenting with a few different color schemes, I ended up with a design that reflects one of my favorite sights: the sunset.</p>
+        <p>This website is built on the VueJS/Webpack setup that the Vue CLI provides, which is my favored way to go about front-end in my free time. I did experiment with using a plugin for pre-rendering each webpage, which was a great experience, although it did take some work to get dynamic routes setup since much of the website is dynamically populated by config files. </p>
       </div>
+
+      <!--
+      <div class="desc-section">
+        <div class="display-1 section-title font-weight-light">Design</div>
+        <p>My designs usually start with a series of low fidelity sketches, either on whiteboard or in a sketchbook. They aren't the prettiest, but the goal is to understand the layout of important information and how users may interact with and understand those elements on various screen sizes. I usually proceed to wireframes and eventually annotate them before working on the final product, but this time I decided to jump right into implementation. </p>
+        <p>I went through several iterations of both layout, using the Material based UI toolkit Vuetify as a base at first. After getting a vague idea of how the website would look in practice, I experimented with a few different color schemes until I found something I really liked.</p>
+        <img class="proj-img" :src="require(`@/assets/2020-portfolio/early_03.png`)" style="max-width: 700px;"/>
+        <img class="proj-img" :src="require(`@/assets/2020-portfolio/early_04.png`)" style="max-width: 700px;"/>
+        <img class="proj-img" :src="require(`@/assets/2020-portfolio/final_01.png`)" style="max-width: 700px;"/>
+      </div>
+
+      <div class="desc-section">
+        <div class="display-1 section-title font-weight-light">Lessons and Future Work</div>
+        <p>I'm more familiar with CSS-based animations, such as object properties that perform well when transitioned due to GPU acceleration. </p>
+        <p>There is quite a lot I wish to improve; I'd love to add a parallax effect to the pages, and make my project/blog pages a little more visually engaging. </p>
+      </div> -->
+
     </div>
 
-  </div>
+  </blog-styles>
 </template>
 
 <script>
 import ProjInfo from '../../store/project_info.js';
+import BlogStyles from '../../components/BlogStyles.vue';
 
 export default {
-  name: 'P_10',
+  name: 'P_2020-portfolio',
+  components: { BlogStyles },
   data() {
     return {
       info: ProjInfo.projects[9],
@@ -43,116 +58,21 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .proj-card {
-  position: relative;
+  background-image: url('~@/assets/proj_portfolio.png');
+}
+
+img {
+  display: block; 
+  margin: auto;
   width: 100%;
-  /* min-height: 300px; */
-  text-align: right;
-  padding: 30px 75px 30px 0px;
-
-  background-color: var(--v-bg_accent_03-base);
-  background-image: url('~@/assets/cat_03.jpg');
-  background-position: center center;
-  background-size: cover; /* contain or cover */
-  color: white;
-}
-
-.proj-description {
-  margin-left: 250px;
-  position: relative;
-  margin-right: 15px;
-  margin-bottom: 50px;
-  background-color: rgba(0, 0, 0, 0.075);
-  color: white;
-  font-weight: 300;
-}
-
-.proj-background {
-  position: absolute;
-  top: 0;
-  left: -245px;
-  height: 100%; 
-  min-width: 600px;
-
-  background-color: var(--v-bg_accent_02-base);
-
-  mask-image: url('~@/assets/bg_02.png');
-  mask-repeat: repeat-y;
-  mask-position: left top;
-  mask-size: 522px;
-
-  background-repeat: repeat-y;
-  background-position: left top;
-  background-size: 522px;
-}
-
-.section-title {
-  text-align: center;
-  margin-top: 35px;
-  margin-bottom: 5px;
-}
-
-.proj-img {
-  width: auto; 
-  max-width: 100%;
-}
-
-.section-left-image {
-  display: grid;
-  grid-template-columns: auto auto;
-  margin-top: 45px;
-  grid-gap: 25px;
-}
-
-.icon-container {
-  margin-top: 150px;
-}
-
-.tag-icon {
-  display: inline-block;
   padding: 5px;
-  background-color: rgba(0, 0, 0, 0.527);
-  margin: 5px 5px 0px 0px;
 }
 
-.tag-icon-inner {
-  margin-left: 5px;
-  color: #fff !important;
-}
-
-@media screen and (max-width: 1039px) { 
-  .proj-description {
-    margin-left: 15px;
-  }
-
-  .proj-card {
-    padding: 30px 30px 30px 0px;
-  }
-
-}
-
-@media screen and (max-width: 599px) { 
-  .proj-description {
-    margin-left: 15px;
-  }
-  
-  .proj-card {
-    text-align: center;
-    padding: 20px 15px 20px 15px;
-  }
-
-  .section-left-image {
-    grid-template-columns: auto;
-    justify-items: center;
-  }
-
-  .icon-container {
-    margin-top: 100px;
-  }
-
-  .tag-icon {
-    min-width: 200px;
-  }
+p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 </style>
