@@ -1,13 +1,11 @@
 <template>
   <div style="position: relative; height: 100%">
-    <div class="about-background"></div>
-    <div class="about-page">
-      <div class="display-2 about-title font-weight-thin">About Me</div>
-      <div class="about-section font-weight-light">Studied Software Engineering (BS) and Computer Science (MS) at RIT between 2015 and 2020. </div>
-      <div class="about-section font-weight-light">Passionate about web development, software architecture/design and graphics programming. </div>
-      <div class="about-section font-weight-light">My hobbies outside of software development include music performance, movies and cooking. Maybe all at the same time.</div>
+    <div class="contact-background"></div>
+    <div class="contact-page">
+      <div class="display-2 about-title font-weight-thin">Howdy! Let's Chat!</div>
+      <div class="statement font-weight-light">Reach me by e-mail or LinkedIn and I'll respond ASAP. </div>
 
-      <div class="link-section" v-for="site in info.links"><a :href="site.link">{{site.title}}</a></div>
+      <div class="link-section" v-for="site in info.contacts"><a :href="site.link">{{site.title}}</a></div>
     </div>
   </div>
 </template>
@@ -20,23 +18,26 @@ export default {
   data() {
     return {
       info: HomeInfo,
+      email: HomeInfo.contacts[0].link,
+      linkedin: HomeInfo.contacts[1],
     }
   }
 };
 </script>
 
-<style>
-.about-page {
+<style scoped>
+.contact-page {
   position: relative;
-  text-align: left;
+  text-align: center;
   max-width: 730px;
   margin: 0 auto 25px auto;
   padding: 0 15px 0 15px;
   color: var(--v-bg_text-base);
 }
 
-.about-section {
+.statement {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .about-section-2 {
@@ -50,7 +51,7 @@ export default {
 }
 
 .link-section a {
-  color:var(--v-link_color-base) !important;
+  color:var(--v-link_color-base);
 }
 
 .about-title {
@@ -58,7 +59,7 @@ export default {
   margin-bottom: 25px;
 }
 
-.about-background {
+.contact-background {
   position: absolute;
   bottom: 0px;
   width: 100%;

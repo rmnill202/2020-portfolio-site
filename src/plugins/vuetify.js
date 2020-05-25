@@ -11,26 +11,39 @@ export default new Vuetify({
     },
     themes: {
       light: {
-        // primary:            '#707070',
-        // secondary:          '#9e9292',
+        primary:            '#984cad',
 
-        // primary_accent_01:  '#d2d2d2',
-        // primary_accent_02:  '#c4c4c4',
+        primary_accent_01:  '#723982',
+        primary_accent_02:  '#60306e',
         
-        // primary_text:       '#ffffff',
-        // primary_icon:       '#ffffff',
-        // primary_icon_inner: '#757575',
+        primary_text:       '#ffffff',
+        // primary_icon:       '#df9646',
+        // primary_icon_inner: '#eee',
+        primary_icon:       '#caa4d5',
+        primary_icon_inner: '#7b3f6e',
 
-        // background:         '#ffffff',
-        // bg_accent_01:       '#bbbbbb',
-        // bg_accent_02:       '#777777',
-        // bg_accent_03:       '#000000',
-        // bg_text:            '#212121',
+        background:         '#ffffff',
+        // bg_accent_01:       '#df8355', //df8355
+        // bg_accent_02:       '#df616b', //df616b
+        // bg_accent_03:       '#290036',
+        // #df5555
+        // #c13636
+        // #8c2f47
+        // #7b3f6e
+        bg_accent_01:       '#df5555', 
+        bg_accent_02:       '#8c2f47', 
+        bg_accent_03:       '#290036',
 
-        // card_background:    '#eeeeee',
-        // card_text:          '#212121',
-        // navbar_color:       '#574c75',
-        // link_color:         '#8E7DBE',
+        bg_text:            '#fff',
+
+        card_background:    '#443a5e',
+        card_text:          '#fff',
+        card_accent:        '#df4646',
+        card_accent_2:      '#583b5b',
+        card_accent_3:      '#370537',
+        navbar_color:       '#984cad',
+        navbar_text:        '#fff',
+        link_color:         '#fff',
 
 
         //
@@ -103,26 +116,26 @@ export default new Vuetify({
 
                 
         ///// Purple Poppy
-        primary:            '#8E7DBE',
+        // primary:            '#8E7DBE',
 
-        primary_accent_01:  '#574c75',
-        primary_accent_02:  '#403857',
+        // primary_accent_01:  '#574c75',
+        // primary_accent_02:  '#403857',
         
-        primary_text:       '#ffffff',
-        primary_icon:       '#f7f4f0',
-        primary_icon_inner: '#8E7DBE',
+        // primary_text:       '#ffffff',
+        // primary_icon:       '#f7f4f0',
+        // primary_icon_inner: '#8E7DBE',
 
-        background:         '#f7f4f0',
-        bg_accent_01:       '#F1E3D3',
-        bg_accent_02:       '#F2D0A9',
-        bg_accent_03:       '#D88C9A',
-        bg_text:            '#272727',
+        // background:         '#f7f4f0',
+        // bg_accent_01:       '#F1E3D3',
+        // bg_accent_02:       '#F2D0A9',
+        // bg_accent_03:       '#D88C9A',
+        // bg_text:            '#272727',
 
-        card_background:    '#f7f4f0',
-        card_text:          '#272727',
+        // card_background:    '#f7f4f0',
+        // card_text:          '#272727',
 
-        navbar_color:       '#574c75',
-        link_color:         '#e6af70',
+        // navbar_color:       '#574c75',
+        // link_color:         '#e6af70',
 
 
         

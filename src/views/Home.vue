@@ -7,26 +7,27 @@
       <div class="bg-3"></div>
       <div class="bg-2"></div>
       <div class="bg-1"></div>
-      <div class="stars-02"></div>
       <div class="fill-back"><div class="fill-back-inner"></div></div>
+      <div class="stars-03"></div>
     </div>
-    
 
     <div class="homepage-div">
       <!-- Intro - Statement, degrees -->
       <div class="homepage-intro">
-        <div class="display-3 intro-name">Hi, I'm Robert Nill</div>
-        <div class="headline">Software Engineer </div>
-        <v-btn tile depressed small class="resume-button" color="primary" :href="`${publicPath}/2020_Nill_Software_Engineer_Resume.pdf`">View Resume (PDF)</v-btn>
+        <div class="display-3 intro-name font-weight-thin">Hi, I'm Robert Nill</div>
+        <div class="headline font-weight-thin">Software Engineer </div>
+        <reg-btn class="resume-button" :linkTo="`${publicPath}/2020_Nill_Software_Engineer_Resume.pdf`" text="Resume"/> 
       </div>
 
       <!-- Skillsets, looking for -->
       <div class="homepage-skills">
+        <div class="display-2 font-weight-thin">Skillsets</div>
         <skills-panel/>
       </div>
 
       <!-- Portfolio -->
       <div class="homepage-portfolio">
+        <div class="display-2 font-weight-thin" style="margin-top: 150px; margin-bottom: 150px">Select Works</div>
         <projects-panel style="margin-bottom: 100px"/>
       </div>
 
@@ -39,10 +40,12 @@
 import HomeInfo from '../store/home_info.js';
 import SkillsPanel from '../components/SkillsPanel.vue';
 import ProjectsPanel from '../components/ProjectsPanel.vue';
+import NavBtn from '../components/NavBtn.vue';
+import RegBtn from '../components/RegBtn.vue';
 
 export default {
   name: 'home',
-  components: { SkillsPanel, ProjectsPanel },
+  components: { SkillsPanel, ProjectsPanel, NavBtn, RegBtn },
   data() {
     return {
       info: HomeInfo,
@@ -55,14 +58,19 @@ export default {
 <style>
 /* Assume default styling applies to larger screens */
 .homepage-div {
-  display: grid;
+  /* display: grid; */
   row-gap: 25px;
 
   grid-template-columns: 45% 5% 50%;
   margin: 0px 20px;
 }
 
+.display-2 {
+  color: var(--v-bg_text-base);
+}
+
 .homepage-skills {
+  text-align: center;
   grid-column-start: 3;
   grid-column-end: 4;
 }
@@ -71,10 +79,14 @@ export default {
   grid-column-start: 1;
   grid-column-end: 4;
   margin: 0px -20px;
+  position: relative;
+  text-align: center;
 }
 
 .resume-button {
-  margin: auto 0px auto auto;
+  /* margin: auto 0px auto auto; */
+  margin-left:  15px;
+  margin-right: 20px;
 }
 
 .homepage-intro {
@@ -83,6 +95,9 @@ export default {
   grid-template-rows: min-content min-content;
   max-width: 450px;
   color: var(--v-bg_text-base);
+
+  margin: auto;
+  margin-bottom: 100px;
 }
 .intro-name {
   grid-column-start: 1;
@@ -191,16 +206,17 @@ export default {
 
   background-color: var(--v-bg_accent_03-base);
 
-  mask-image: url('~@/assets/m_bg_01.svg'), url('~@/assets/m_bg_01.svg');
-  mask-repeat: repeat-x, repeat-x;
-  mask-position: center top, center top;
-  mask-size: 1122px, 1120px;
+  mask-image: url('~@/assets/bg_01.png');
+  mask-repeat: repeat-x;
+  mask-position: center top;
+  mask-size: 1122px;
 
   background-repeat: repeat-x;
   background-position: center top;
   background-size: 1122px;
   
   animation: bg-anim-1 2s ease 1;
+  /* transform: scale(2, 1); */
 }
 
 .bg-2 {
@@ -212,16 +228,17 @@ export default {
 
   background-color: var(--v-bg_accent_02-base);
 
-  mask-image: url('~@/assets/m_bg_02.svg'), url('~@/assets/m_bg_02.svg');
-  mask-repeat: repeat-x, repeat-x;
-  mask-position: center top, center top;
-  mask-size: 1022px, 1020px;
+  mask-image: url('~@/assets/bg_02.png');
+  mask-repeat: repeat-x;
+  mask-position: center top;
+  mask-size: 1022px;
 
   background-repeat: repeat-x;
   background-position: center top;
   background-size: 1022px;
 
   animation: bg-anim-2 2.5s ease 1;
+  /* transform: scale(2, 1); */
 }
 
 .bg-3 {
@@ -233,16 +250,17 @@ export default {
 
   background-color: var(--v-bg_accent_01-base);
 
-  mask-image: url('~@/assets/m_bg_03.svg'), url('~@/assets/m_bg_03.svg');
-  mask-repeat: repeat-x, repeat-x;
-  mask-position: center top, center top;
-  mask-size: 822px, 820px;
+  mask-image: url('~@/assets/bg_03.png');
+  mask-repeat: repeat-x;
+  mask-position: center top;
+  mask-size: 822px;
 
   background-repeat: repeat-x;
   background-position: center top;
   background-size: 822px;
 
   animation: bg-anim-3 3.25s ease 1;
+  /* transform: scale(2, 1); */
 }
 
 
@@ -300,30 +318,30 @@ export default {
   position: absolute;
   width: 100%;
   min-height: 700px;
-  background-image: url('~@/assets/Stars_01.png');
+  background-image: url('~@/assets/stars_t.png');
   background-repeat: repeat-x;
   background-position: center top;
   background-size: 1770px;
 
-  margin-top: 150px;
+  margin-top: 0px;
   opacity: 0.3;
   animation-delay: 0.5s;
   animation: star-anim-01 2.5s ease 1;
+  /* filter: invert() opacity(0.5); */
 }
-
-.stars-02 {
+.stars-03 {
   position: absolute;
   width: 100%;
-  min-height: 700px;
-  background-image: url('~@/assets/Stars_s.png');
+  min-height: 100%;
+  background-image: url('~@/assets/stars_t.png');
   background-repeat: repeat;
   background-position: center top;
-  background-size: 1750px;
+  background-size: 770px;
+  background-clip: content-box;
 
-  margin-top: 150px;
-  opacity: 0.15;
-  animation-delay: 0.25s;
-  animation: star-anim-02 3.5s ease 1;
+  padding-top: 900px;
+  opacity: 0.1;
+  /* filter: invert() opacity(0.5); */
 }
 
 .fill-back {
@@ -349,6 +367,7 @@ export default {
 
   .homepage-intro {
     margin: 0px auto;
+    margin-bottom: 200px;
   }
 
   .homepage-skills, .homepage-portfolio {
@@ -362,6 +381,7 @@ export default {
 @media screen and (max-width: 599px) { 
   .homepage-intro {
     grid-template-columns: 100%;
+    margin-bottom: 150px;
   }
   .intro-name {
     grid-column-start: 1;
@@ -369,12 +389,15 @@ export default {
   }
   .resume-button {
     margin: auto;
+    justify-self: center;
+    width: 150px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .homepage-intro {
     max-width: 300px;
+    margin-bottom: 150px;
   }
 }
 </style>

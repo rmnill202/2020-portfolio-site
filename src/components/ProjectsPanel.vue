@@ -4,15 +4,14 @@
     <div class="project-grid">
       <div class="project-diamond" v-for="(p, index) in projs"> 
 
-        <div class="project-diamond-clickable" :tabindex="1 + skill_len + index"> <!-- :style="`background-color: ${p.color}`" -->
-          <!-- <div :class="`project-diamond-fill`" />  -->
+        <div class="project-diamond-clickable" :tabindex="1 + skill_len + index" :style="proj_styles(p)"> 
           <div class="project-diamond-title">{{p.title}}</div>
           <div class="project-diamond-details">
             {{p.summary}}
           </div>
           <div class="project-diamond-icon"><v-icon class="icon-inner">fas fa-plus</v-icon></div>
         </div>
-        <v-btn class="project-diamond-link" :to="`/project/${p.id}`" tile depressed block tabindex="-1" color="link_color">Read More Here</v-btn>
+        <router-btn class="project-diamond-link" :router='true' :linkTo="`/project/${p.id}`" text="Read More Here" tile depressed block tabindex="-1"/>
         <div class="diamond-closer"/>
       </div>
     </div>
@@ -22,16 +21,23 @@
 <script>
 import ProjectInfo from '../store/project_info.js';
 import HomeInfo from '../store/home_info.js';
+import RouterBtn from './RouterBtn.vue';
 
 export default {
   name: 'projects_panel',
+  components: { RouterBtn },
   data() {
     return {
       projs: ProjectInfo.projects.slice().reverse(),
-      skill_len: HomeInfo.skills.length
+      skill_len: HomeInfo.skills.length,
     };
   },
-  
+  methods: {
+    proj_styles(p) {
+      return { '--bg-icon': `url(${require(`@/assets/${p.image}`)})` };
+      // return { };
+    }
+  }
 };
 </script>
 
@@ -39,13 +45,13 @@ export default {
 .projects-panel-div {
   display: flex;
   justify-content: center;
-  margin-top: -120px;
+  margin-top: 120px;
 }
 
 .project-grid {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(5, 205px);
+  grid-template-columns: repeat(3, 205px);
   /* margin-right: 200px; */
 }
 
@@ -68,7 +74,11 @@ export default {
   width:  200px;
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   background-size: 200px 200px;
-  /* transition: clip-path 0.5s, z-index 0.5s step-end; */
+  /* background-image: var(--bg-icon); */
+  /* background: linear-gradient( #984cadb8, #984cadb8 ), var(--bg-icon); */
+  background: linear-gradient(-135deg, #984cadb8, #370537 75% ), var(--bg-icon);
+  background-position: center center;
+  background-size: cover; 
   transition: clip-path 0.5s;
   cursor: pointer;
   z-index: 1;
@@ -76,7 +86,7 @@ export default {
 .project-diamond-clickable:hover {
   clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
   transition: clip-path 0.25s;
-  /* background-color: var(--v-primary_accent_02-base); */
+  background-color: var(--v-primary_accent_02-base);
 }
 .project-diamond-clickable:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -84,6 +94,7 @@ export default {
   border-color:transparent!important;
   outline:none;
   /* transition: clip-path 0.25s, z-index 0.5s step-start; */
+  background-image: none;
   transition: clip-path 0.25s;
   /* cursor: default; */
   background-color: var(--v-primary_accent_01-base);
@@ -183,7 +194,7 @@ export default {
 
 .project-diamond-link {
   position: absolute;
-  bottom: -36px;
+  bottom: -34px;
   z-index: 9998;
   transition: filter 0.25s ease-out, visibility 0.5s;
   transition-delay: 0.25s;
@@ -192,7 +203,7 @@ export default {
   visibility: hidden;
 }
 .project-diamond-clickable:focus + .project-diamond-link {
-  bottom: -36px;
+  bottom: -34px;
   z-index: 9999;
   filter: opacity(100%);
   visibility: visible;
@@ -200,7 +211,7 @@ export default {
 
 
 /** SMALLER SCREENS **/
-@media screen and (max-width: 1039px) and (min-width: 481px) {
+@media screen and (min-width: 481px) {
   .project-grid {
     grid-template-columns: repeat(2, 205px);
   }
@@ -222,7 +233,7 @@ export default {
     grid-column-end:   3;
   }
 
-  .project-diamond:nth-child(1) {
+  /* .project-diamond:nth-child(1) {
     margin-bottom: 50px;
     margin-right: 25px;
   }
@@ -239,73 +250,74 @@ export default {
 
   .project-diamond:nth-child(4) {
     margin-bottom: 5px;
-  }
+  } */
   
 }
 
 /** LARGER SCREENS **/
-@media screen and (min-width: 1040px) {
+/* @media screen and (min-width: 1040px) {
   .project-diamond:nth-child(3n + 1) {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end:   4;
   }
   .project-diamond:nth-child(3n + 2) {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end:   3;
   }
   .project-diamond:nth-child(3n + 0) {
     grid-column-start: 3;
     grid-column-end:   4;
+    margin-left: -205px;
   }
 
   .project-diamond:nth-child(1) {
     grid-column-start: 1;
-    grid-column-end:   5;
-    margin-bottom: 150px;
+    grid-column-end:   4;
+    margin-bottom: 100px;
     margin-right: 150px;
   }
 
   .project-diamond:nth-child(2) {
     grid-column-start: 1;
-    grid-column-end:   5;
+    grid-column-end:   4;
     margin-bottom: 100px;
-    margin-right: 450px;
+    margin-left: 150px;
   }
 
   .project-diamond:nth-child(3) {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end:   3;
     margin-top: -130px;
     margin-right: 10px;
+    margin-left: 0px;
+    grid-row-start: 3;
+    grid-row-end:   4;
   }
 
   .project-diamond:nth-child(4) {
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-column-end:   4;
     margin-bottom: 20px;
     margin-right: 10px;
+    grid-row-start: 3;
+    grid-row-end:   4;
   }
 
   .project-diamond:nth-child(5) {
     grid-column-start: 1;
-    grid-column-end:   3;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-end:   2;
     margin-top: -105px;
     margin-right: 35px;
   }
   .project-diamond:nth-child(6) {
     grid-column-start: 2;
-    grid-column-end:   4;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-end:   3;
     margin-top: -100px;
+    margin-left: 0px;
   }
   .project-diamond:nth-child(7) {
     grid-column-start: 3;
-    grid-column-end:   5;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-end:   4;
     margin-bottom: 5px;
   }
   .project-diamond:nth-child(10) {
@@ -314,7 +326,7 @@ export default {
   .project-diamond:nth-child(12) {
     margin-top: -110px;
   }
-}
+} */
 
 @media screen and (max-width: 480px) {
   .project-grid {

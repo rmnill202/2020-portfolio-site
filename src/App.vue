@@ -1,72 +1,37 @@
 <template>
-  <v-app style="background-color: var(--v-background-base)">
+  <!-- <v-app style="background-color: var(--v-background-base)"> -->
+  <!-- <v-app style="background: linear-gradient(180deg, rgba(223,152,70,1) 0%, rgba(223,70,125,1) 33%);"> -->
+    <!-- <v-app style="background: linear-gradient(180deg, rgba(223,152,70,1) 0%, rgb(223, 70, 70) 33%);"> -->
+  <!-- <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 500px);"> -->
+  <!-- <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 500px, rgb(223, 70, 70) 700px, #290036 1200px);"> -->
+  <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 500px);">
 
     <!-- Navigation -->
-    <div > <!-- style="position: sticky; top: 0" -->
-
-      <!-- Navigation Bar -->
-      <v-toolbar flat color="transparent" min-height="64px" height="64px"> <!--  height="100px" -->
-
-        <!-- Icon / Social links -->
-        <div>
-          <v-btn class="mx-2" icon href="https://github.com/rmnill202/">
-            <v-icon style="font-size: 30px" color="navbar_color">fab fa-github-square</v-icon>
-          </v-btn>
-          <v-btn class="mx-2" icon href="https://www.linkedin.com/in/robert-nill-096b64112/">
-            <v-icon style="font-size: 30px" color="navbar_color">fab fa-linkedin</v-icon>
-          </v-btn>
-        </div>
-        <v-spacer/>
-
-        <!-- Navigation buttons -->
-        <v-toolbar-items class="hidden-xs-only" style="height: 50px;"> <!--  align-self: end; -->
-          <v-btn v-for="link in pageLinks" :to="link.linkTo" text color="navbar_color">{{link.text}}</v-btn>
-        </v-toolbar-items>
-
-        <!-- Hamburger menu - Appears on smaller screens only -->
-        <v-btn icon class="hidden-sm-and-up" @click="drawerOpen = !drawerOpen">
-          <v-icon color="navbar_color">fas fa-bars</v-icon>
-        </v-btn>
-        
-      </v-toolbar>
-
-      <!-- Drawer - Mobile -->
-      <v-navigation-drawer v-model="drawerOpen" absolute temporary>
-        <v-list> 
-           <v-list-item >
-            <v-list-item-content>
-              <div class="title">Navigation</div>
-            </v-list-item-content>
-          </v-list-item>
-          <v-divider></v-divider>
-          <v-list-item v-for="link in pageLinks" :to="link.linkTo">  
-            <v-list-item-icon>
-              <v-icon color="navbar_color">{{ link.icon }}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>{{link.text}}</v-list-item-content>  
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
+    <div> <!-- style="position: sticky; top: 0" -->
+      <div style="text-align: center; margin-bottom: 50px; margin-top: 50px">
+        <nav-btn v-for="l in pageLinks" :linkTo="l.linkTo" :text="l.text"/>
+      </div>
     </div>
-
 
     <!-- Page Contents -->
     <router-view/>
-
+    
   </v-app>
 </template>
 
 <script>
+import NavBtn from './components/NavBtn.vue';
 
 export default {
   name: 'App',
-
+  components: { NavBtn },
   data() {
     return {
       drawerOpen: false,
       pageLinks: [
         {text: 'Portfolio',   linkTo: '/',      icon: 'fas fa-briefcase'},
-        {text: 'About Me',    linkTo: '/about', icon: 'fas fa-address-card'},
+        {text: 'About',       linkTo: '/about', icon: 'fas fa-address-card'},
+        {text: 'Contact',       linkTo: '/contact', icon: 'fas fa-address-card'},
         {text: 'Blog',        linkTo: '/blog',  icon: 'fas fa-comments'},
       ]
     };
