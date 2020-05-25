@@ -8,6 +8,7 @@
       <div class="bg-2"></div>
       <div class="bg-1"></div>
       <div class="fill-back"><div class="fill-back-inner"></div></div>
+      <div class="stars-03"></div>
     </div>
 
     <div class="homepage-div">
@@ -20,11 +21,13 @@
 
       <!-- Skillsets, looking for -->
       <div class="homepage-skills">
+        <div class="display-2 font-weight-thin">Skillsets</div>
         <skills-panel/>
       </div>
 
       <!-- Portfolio -->
       <div class="homepage-portfolio">
+        <div class="display-2 font-weight-thin" style="margin-top: 150px; margin-bottom: 150px">Select Works</div>
         <projects-panel style="margin-bottom: 100px"/>
       </div>
 
@@ -62,7 +65,12 @@ export default {
   margin: 0px 20px;
 }
 
+.display-2 {
+  color: var(--v-bg_text-base);
+}
+
 .homepage-skills {
+  text-align: center;
   grid-column-start: 3;
   grid-column-end: 4;
 }
@@ -71,6 +79,8 @@ export default {
   grid-column-start: 1;
   grid-column-end: 4;
   margin: 0px -20px;
+  position: relative;
+  text-align: center;
 }
 
 .resume-button {
@@ -85,7 +95,7 @@ export default {
   color: var(--v-bg_text-base);
 
   margin: auto;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 .intro-name {
   grid-column-start: 1;
@@ -315,6 +325,20 @@ export default {
   opacity: 0.3;
   animation-delay: 0.5s;
   animation: star-anim-01 2.5s ease 1;
+  /* filter: invert() opacity(0.5); */
+}
+.stars-03 {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  background-image: url('~@/assets/stars_t.png');
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 770px;
+  background-clip: content-box;
+
+  padding-top: 900px;
+  opacity: 0.1;
   /* filter: invert() opacity(0.5); */
 }
 

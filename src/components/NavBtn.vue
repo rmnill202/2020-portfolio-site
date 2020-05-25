@@ -24,6 +24,7 @@ export default {
   margin-left:  15px;
   margin-right: 15px;
   /* width: 85px; */
+  margin-top: 15px;
 }
 
 /* .anim-border::before,  */

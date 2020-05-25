@@ -17,26 +17,32 @@
       <!-- Project Summary -->
       <div class="desc-section">
         <div class="display-1 section-title font-weight-light">New Decade, New Website</div>
-        <p>A new decade has begun, and with graduation in sight a new website seemed to be in order. Carrying over the same geometric motif from its previous iteration, this website adds a more thought out color schemed and foregoes the SPA style in favor of simpler and smaller pages.</p>
-        <p>With this website, I wanted to expand upon the aesthetics and flesh out the interactive elements. By adding various animations and experimenting with a few different color schemes, I ended up with a design that reflects one of my favorite sights: the sunset.</p>
-        <p>This website is built on the VueJS/Webpack setup that the Vue CLI provides, which is my favored way to go about front-end in my free time. I did experiment with using a plugin for pre-rendering each webpage, which was a great experience, although it did take some work to get dynamic routes setup since much of the website is dynamically populated by config files. </p>
+        <p>Sought to build upon my previous portfolio with a more thought-out color scheme, flat design and more interactive elements. After experimenting with animations and color schemes, I ended up with a design that reflects one of my favorite sights: the sunset.</p>
       </div>
 
-      <!--
+      
       <div class="desc-section">
-        <div class="display-1 section-title font-weight-light">Design</div>
-        <p>My designs usually start with a series of low fidelity sketches, either on whiteboard or in a sketchbook. They aren't the prettiest, but the goal is to understand the layout of important information and how users may interact with and understand those elements on various screen sizes. I usually proceed to wireframes and eventually annotate them before working on the final product, but this time I decided to jump right into implementation. </p>
-        <p>I went through several iterations of both layout, using the Material based UI toolkit Vuetify as a base at first. After getting a vague idea of how the website would look in practice, I experimented with a few different color schemes until I found something I really liked.</p>
+        <div class="display-1 section-title font-weight-light">Approach</div>
+        <p>Built on lightweight VueJS/Webpack boilerplate through Vue CLI. </p>
+        <p>Expanded to add features such as dynamic page routing through config files, improving extensibility and allowing for easy page content modification.</p>
+        <p>Added pre-rendering to improve client-side performance. Decided this was a better choice than SSR, since this website is static content and has very few pages.</p>
+      </div>
+
+      <div class="desc-section">
+        <div class="display-1 section-title font-weight-light">Retrospective</div>
+        <p>I'm very happy with the color scheme, but I would have liked to experiment with parallaxing.</p>
+        <p>Having the site content figured out early on (images, text, etc) helped to avoid wheel-spinning. </p>
+        <p>Learned a lot about CSS animations in the context of performance, such as object properties that perform well when transitioned due to GPU acceleration., and tools for evaluating performance. </p>
+        <p>Big thanks to all the friends that provided feedback and tested on OSes/devices that I don't physically have access to! </p>
+      </div>
+
+      <div class="desc-section">
+        <div class="display-1 section-title font-weight-light">Design Iteration</div>
+        <p>Started with low fidelity sketches, proceeded to refine the layout and color over during implementation. </p>
         <img class="proj-img" :src="require(`@/assets/2020-portfolio/early_03.png`)" style="max-width: 700px;"/>
         <img class="proj-img" :src="require(`@/assets/2020-portfolio/early_04.png`)" style="max-width: 700px;"/>
         <img class="proj-img" :src="require(`@/assets/2020-portfolio/final_01.png`)" style="max-width: 700px;"/>
       </div>
-
-      <div class="desc-section">
-        <div class="display-1 section-title font-weight-light">Lessons and Future Work</div>
-        <p>I'm more familiar with CSS-based animations, such as object properties that perform well when transitioned due to GPU acceleration. </p>
-        <p>There is quite a lot I wish to improve; I'd love to add a parallax effect to the pages, and make my project/blog pages a little more visually engaging. </p>
-      </div> -->
 
     </div>
 
@@ -52,7 +58,7 @@ export default {
   components: { BlogStyles },
   data() {
     return {
-      info: ProjInfo.projects[9],
+      info: ProjInfo.projects[6],
     };
   },
 };
@@ -73,6 +79,6 @@ img {
 p {
   margin-top: 15px;
   margin-bottom: 15px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 </style>

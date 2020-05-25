@@ -25,6 +25,7 @@ module.exports = {
         '/',
         '/about',
         '/blog',
+        '/contact',
         ...Projects.projects.map( proj => `/project/${proj.id}`),
         ...Blogs.posts.map( post => `/blog/${post.id}`),
       ],

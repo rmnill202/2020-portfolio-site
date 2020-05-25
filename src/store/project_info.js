@@ -1,34 +1,9 @@
 module.exports = {
   projects: [
-    { 
-      id: 'healthnet',                    title: 'Healthnet', 
-      image: 'proj_icon_04.png',   color: '#fff',
-      start_date: '01/16',      end_date: '05/16',
-          
-      project_url: '/',
-      tags: [
-        {text: 'Class Project', icon: 'fas fa-book-open'},
-        {text: 'Python',        icon: 'fab fa-python'}
-      ], 
-      summary: 'A hospital management & patient registration system, writen in Python/Django.',
-    },
-
-    { 
-      id: 'afrs',                    title: 'AFRS', 
-      image: 'proj_icon_03.png',        color: '#fff',
-      start_date: '09/16',      end_date: '12/16',
-          
-      project_url: '/',
-      tags: [
-        {text: 'Class Project', icon: 'fas fa-book-open'},
-        {text: 'Java',          icon: 'fab fa-coffee'}
-      ], 
-      summary: 'Mock API for reserving airline flights and querying airport data.',
-    },
 
     { 
       id: 'pantreats',                    title: 'Pantreats', 
-      image: 'proj_icon_02.png',   color: '#fff',
+      image: 'pantreats/pantreats.png',   color: '#fff',
       start_date: '12/17',      end_date: '09/17',
           
       project_url: '/',
@@ -44,7 +19,7 @@ module.exports = {
 
     { 
       id: '2018-portfolio',                    title: '2018 Portfolio Website', 
-      image: 'proj_portfolio.png',   color: '#fff',
+      image: '2018-portfolio/preview.png',   color: '#fff',
       start_date: '01/18',      end_date: '07/19',
           
       project_url: 'https://github.com/rmnill202/vuewebsite',
@@ -60,7 +35,7 @@ module.exports = {
 
     { 
       id: 'supply-chain',                    title: 'Supply Chain Visibility', 
-      image: 'proj_icon_06.png', color: '#fff',
+      image: 'supply-chain/poster_content.png', color: '#fff',
       start_date: '08/18',      end_date: '05/19',
           
       project_url: '/',
@@ -74,8 +49,8 @@ module.exports = {
 
     
     { 
-      id: 'raytracing',                    title: 'Raytracer(s)', 
-      image: 'proj_icon_05.png',   color: '#fff',
+      id: 'raytracing',                    title: 'Ray Tracing', 
+      image: 'raytracing/ward.png',   color: '#fff',
       start_date: '10/18',      end_date: '05/20',
           
       project_url: 'https://rmnill202.github.io/711-raytracer',
@@ -94,8 +69,8 @@ module.exports = {
 
     { 
       id: 'tigercenter',                    title: 'TigerCenter', 
-      image: 'proj_icon_04.png', color: '#fff',
-      start_date: '10/18',      end_date: '05/20',
+      image: 'tigercenter/preview.png', color: '#fff',
+      start_date: '05/19',      end_date: '08/19',
           
       project_url: 'https://rmnill202.github.io/711-raytracer',
       tags: [
@@ -110,24 +85,8 @@ module.exports = {
     },
 
     { 
-      id: 'tangible-ar',                    title: 'Texturing Tangible AR Objects', 
-      image: 'proj_icon_03.png',    color: '#fff',
-      start_date: '01/20',      end_date: '05/20',
-          
-      project_url: 'https://rmnill202.github.io/711-raytracer',
-      tags: [
-        {text: 'Capstone (CS)',     icon: 'fas fa-graduation-cap'},
-        {text: 'Augmented Reality', icon: 'fas fa-mobile-alt'},
-        {text: '3D Printing',       icon: 'fas fa-cubes'},
-        {text: 'C# / Unity',        icon: 'fab fa-unity'},
-        {text: 'Graphics',          icon: 'fas fa-lightbulb'},
-      ], 
-      summary: 'AR app written with Unity and ARCore, with the purpose of experimenting with texturing 3D printed objects.',
-    },
-
-    { 
       id: 'painterly',                    title: 'Painterly Shaders', 
-      image: 'proj_icon_02.png',     color: '#fff',
+      image: 'shaders/lily.png',     color: '#fff',
       start_date: '02/20',      end_date: '05/20',
           
       project_url: 'https://rmnill202.github.io/711-raytracer',

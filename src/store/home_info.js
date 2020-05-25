@@ -39,6 +39,10 @@ export default {
     { title: 'Twitter', link: 'https://twitter.com/rmnill202'},
     { title: 'LinkedIn', link: 'https://www.linkedin.com/in/robert-nill-096b64112/'},
     { title: 'Facebook', link: 'https://www.facebook.com/robert.m.nill'}
-    
+  ],
+
+  contacts: [
+    { title: 'rmnill202mail@gmail.com', link: 'mailto:rmnill202mail@gmail.com'},
+    { title: 'LinkedIn', link: 'https://www.linkedin.com/in/robert-nill-096b64112/'},
   ]
 };

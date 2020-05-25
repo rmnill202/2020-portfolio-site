@@ -34,8 +34,8 @@ export default {
   },
   methods: {
     proj_styles(p) {
-      // return { '--bg-icon': `url(${require(`@/assets/${p.image}`)})` };
-      return { };
+      return { '--bg-icon': `url(${require(`@/assets/${p.image}`)})` };
+      // return { };
     }
   }
 };
@@ -75,6 +75,8 @@ export default {
   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%); 
   background-size: 200px 200px;
   /* background-image: var(--bg-icon); */
+  /* background: linear-gradient( #984cadb8, #984cadb8 ), var(--bg-icon); */
+  background: radial-gradient(#984cadb8, #370537 75% ), var(--bg-icon);
   background-position: center center;
   background-size: cover; 
   transition: clip-path 0.5s;
@@ -84,7 +86,7 @@ export default {
 .project-diamond-clickable:hover {
   clip-path: polygon(50% 5%,95% 50%,50% 95%,5% 50%); 
   transition: clip-path 0.25s;
-  /* background-color: var(--v-primary_accent_02-base); */
+  background-color: var(--v-primary_accent_02-base);
 }
 .project-diamond-clickable:focus { 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -92,7 +94,7 @@ export default {
   border-color:transparent!important;
   outline:none;
   /* transition: clip-path 0.25s, z-index 0.5s step-start; */
-  /* background-image: none; */
+  background-image: none;
   transition: clip-path 0.25s;
   /* cursor: default; */
   background-color: var(--v-primary_accent_01-base);
@@ -209,7 +211,7 @@ export default {
 
 
 /** SMALLER SCREENS **/
-@media screen and (max-width: 1039px) and (min-width: 481px) {
+@media screen and (min-width: 481px) {
   .project-grid {
     grid-template-columns: repeat(2, 205px);
   }
@@ -231,7 +233,7 @@ export default {
     grid-column-end:   3;
   }
 
-  .project-diamond:nth-child(1) {
+  /* .project-diamond:nth-child(1) {
     margin-bottom: 50px;
     margin-right: 25px;
   }
@@ -248,12 +250,12 @@ export default {
 
   .project-diamond:nth-child(4) {
     margin-bottom: 5px;
-  }
+  } */
   
 }
 
 /** LARGER SCREENS **/
-@media screen and (min-width: 1040px) {
+/* @media screen and (min-width: 1040px) {
   .project-diamond:nth-child(3n + 1) {
     grid-column-start: 1;
     grid-column-end:   4;
@@ -324,7 +326,7 @@ export default {
   .project-diamond:nth-child(12) {
     margin-top: -110px;
   }
-}
+} */
 
 @media screen and (max-width: 480px) {
   .project-grid {

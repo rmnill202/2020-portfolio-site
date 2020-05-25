@@ -29,8 +29,9 @@ export default {
     return {
       drawerOpen: false,
       pageLinks: [
-        {text: 'About',       linkTo: '/about', icon: 'fas fa-address-card'},
         {text: 'Portfolio',   linkTo: '/',      icon: 'fas fa-briefcase'},
+        {text: 'About',       linkTo: '/about', icon: 'fas fa-address-card'},
+        {text: 'Contact',       linkTo: '/contact', icon: 'fas fa-address-card'},
         {text: 'Blog',        linkTo: '/blog',  icon: 'fas fa-comments'},
       ]
     };

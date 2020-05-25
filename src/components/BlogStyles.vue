@@ -55,8 +55,8 @@ export default {
 
 .section-title {
   text-align: center;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-top: 45px;
+  margin-bottom: 20px;
 }
 
 .proj-img {
@@ -85,6 +85,28 @@ export default {
 .tag-icon-inner {
   margin-left: 5px;
   color: #fff !important;
+}
+
+.dark-title, .light-title {
+  display: inline-block;
+}
+
+.light-title .display-2, .light-title .headline {
+  background-color: rgba(0, 0, 0, 0.527);
+  padding: 8px;
+
+}
+
+.dark-title .display-2, .dark-title .headline {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 8px;
+}
+
+.dark-tag-icon {
+  display: inline-block;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.75);
+  margin: 5px 5px 0px 0px;
 }
 
 @media screen and (max-width: 1039px) { 
