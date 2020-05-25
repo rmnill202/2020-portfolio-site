@@ -4,17 +4,7 @@
     <!-- Page contents -->
     <div class="proj-description">
       <!-- Title Card -->
-      <div class="proj-card">
-        <div class="light-title">
-          <div class="display-2 font-weight-light">{{info.title}}</div>
-          <div class="headline font-weight-light">{{info.start_date}} - {{info.end_date}}</div>
-        </div>
-        <div class="icon-container">
-          <div class="tag-icon body-2 " v-for="tag in info.tags">
-            {{tag.text}} <v-icon small class="tag-icon-inner">{{tag.icon}}</v-icon>
-          </div>
-        </div>
-      </div>
+      <project-title-card :info="info" :light="true"/>
 
       <!-- Project Summary -->
       <div class="desc-section">
@@ -43,10 +33,11 @@
 <script>
 import ProjInfo from '../../store/project_info.js';
 import BlogStyles from '../../components/BlogStyles.vue';
+import ProjectTitleCard from '../../components/ProjectTitleCard.vue';
 
 export default {
   name: 'P_tigercenter',
-  components: { BlogStyles },
+  components: { BlogStyles, ProjectTitleCard },
   data() {
     return {
       info: ProjInfo.projects[4],

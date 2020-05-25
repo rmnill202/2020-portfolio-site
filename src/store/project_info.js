@@ -12,9 +12,11 @@ module.exports = {
         {text: 'JavaScript',    icon: 'fab fa-js-square'},
         {text: 'VueJS',         icon: 'fab fa-vuejs'}
       ], 
-      summary: 'Web application for exploring recipes based on what you have in your kitchen. First exposure to VueJS, focused on UX/UI work',
+      summary: 'Web application for exploring recipes based on what you have in your kitchen. First exposure to Vue, focused on UX/UI work',
 
-      sourceCode: '',
+      links: [
+        {text: 'Source Code',   link: 'https://github.com/steplica/swen444-pantreats'},
+      ]
     },
 
     { 
@@ -28,9 +30,12 @@ module.exports = {
         {text: 'JavaScript',       icon: 'fab fa-js-square'},
         {text: 'VueJS',            icon: 'fab fa-vuejs'}
       ], 
-      summary: 'An older SPA website that I made to show off my work.',
+      summary: 'An older Vue SPA website that I made to show off my work.',
 
-      sourceCode: '',
+      links: [
+        {text: 'Live Site', link: 'https://rmnill202.github.io/vuewebsite'},
+        {text: 'Source Code',   link: 'https://github.com/rmnill202/vuewebsite'},
+      ]
     },
 
     { 
@@ -61,10 +66,12 @@ module.exports = {
         {text: 'Graphics',      icon: 'fas fa-lightbulb'},
         
       ], 
-      summary: 'Simple ray/path tracers written for class projects, and in my free time. ',
+      summary: 'Simple Java/C++ ray tracers written for class projects, and in my free time.',
       
-      sourceCode: '',
-      liveSite:   '',
+      links: [
+        {text: 'Project Site', link: 'https://github.com/rmnill202/2020-portfolio-site'},
+        {text: 'Source Code',   link: 'https://rmnill202.github.io/2020-portfolio-site/'},
+      ]
     },
 
     { 
@@ -79,9 +86,11 @@ module.exports = {
         {text: 'Angular 8',     icon: 'fab fa-angular'},
         
       ], 
-      summary: 'I was lucky to work on TigerCenter, a information and service portal for RIT students!',
+      summary: 'An information and service portal used by thousands of RIT students, written with Angular/Java. ',
 
-      liveSite:   'https://tigercenter.rit.edu/',
+      links: [
+        {text: 'Live Site',   link: 'https://tigercenter.rit.edu/'},
+      ]
     },
 
     { 
@@ -95,7 +104,7 @@ module.exports = {
         {text: 'Graduate Work', icon: 'fas fa-book-open'},
         {text: 'Graphics / GLSL',      icon: 'fas fa-lightbulb'},
       ], 
-      summary: 'Experiments with OSL and Blender for a painterly-effect, for a 700 level procedural shading course. ',
+      summary: 'Experiments with OSL and Blender to give images a "painterly" effect, for a 700 level procedural shading course. ',
     },
 
     { 
@@ -109,14 +118,13 @@ module.exports = {
         {text: 'JavaScript',       icon: 'fab fa-js-square'},
         {text: 'VueJS',            icon: 'fab fa-vuejs'}
       ], 
-      summary: 'This is my new website, you\'re on it now! ',
+      summary: 'New portfolio website with a refined design and improved color scheme, also based on Vue. ',
 
-      sourceCode: 'https://github.com/rmnill202/2020-portfolio-site',
-      liveSite:   'https://rmnill202.github.io/2020-portfolio-site/',
+      links: [
+        {text: 'Source Code', link: 'https://github.com/rmnill202/2020-portfolio-site'},
+        {text: 'Live Site',   link: 'https://rmnill202.github.io/2020-portfolio-site/'},
+      ]
     },
-
-
-
 
   ],
 };

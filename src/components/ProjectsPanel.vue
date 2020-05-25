@@ -76,7 +76,7 @@ export default {
   background-size: 200px 200px;
   /* background-image: var(--bg-icon); */
   /* background: linear-gradient( #984cadb8, #984cadb8 ), var(--bg-icon); */
-  background: radial-gradient(#984cadb8, #370537 75% ), var(--bg-icon);
+  background: linear-gradient(-135deg, #984cadb8, #370537 75% ), var(--bg-icon);
   background-position: center center;
   background-size: cover; 
   transition: clip-path 0.5s;
@@ -194,7 +194,7 @@ export default {
 
 .project-diamond-link {
   position: absolute;
-  bottom: -36px;
+  bottom: -34px;
   z-index: 9998;
   transition: filter 0.25s ease-out, visibility 0.5s;
   transition-delay: 0.25s;
@@ -203,7 +203,7 @@ export default {
   visibility: hidden;
 }
 .project-diamond-clickable:focus + .project-diamond-link {
-  bottom: -36px;
+  bottom: -34px;
   z-index: 9999;
   filter: opacity(100%);
   visibility: visible;

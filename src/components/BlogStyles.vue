@@ -75,6 +75,10 @@ export default {
   margin-top: 150px;
 }
 
+.proj-button {
+  margin: 5px 5px 0 0;
+}
+
 .tag-icon {
   display: inline-block;
   padding: 5px;

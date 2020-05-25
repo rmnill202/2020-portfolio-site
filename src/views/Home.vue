@@ -84,7 +84,9 @@ export default {
 }
 
 .resume-button {
-  margin: auto 0px auto auto;
+  /* margin: auto 0px auto auto; */
+  margin-left:  15px;
+  margin-right: 20px;
 }
 
 .homepage-intro {

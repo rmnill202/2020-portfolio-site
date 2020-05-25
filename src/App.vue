@@ -20,11 +20,10 @@
 
 <script>
 import NavBtn from './components/NavBtn.vue';
-import RegBtn from './components/RegBtn.vue';
 
 export default {
   name: 'App',
-  components: { NavBtn, RegBtn },
+  components: { NavBtn },
   data() {
     return {
       drawerOpen: false,
