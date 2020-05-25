@@ -9,8 +9,8 @@
       <!-- Project Summary -->
       <div class="desc-section">
         <div class="display-1 section-title font-weight-light">Problem Context</div>
-        <p>Develop a website with interesting UX/UI concerns. Went with a recipe-serving website that provides recipes based on what you have in your pantry.</p>
-        <p>Goal to explore accessibility and usability of our design over the course of a semester, and progress through the UX lifecycle from concept to design to implementation.</p>
+        <p>Problem was to develop a website that allowed us to tackle interesting UX/UI challenges. Team decided to design and implement a recipe website that provides recipes based on what you have in your pantry.</p>
+        <p>Goal was to explore accessibility and usability of our design over the course of a semester, and progress through the UX lifecycle from concept to design to implementation and finally evaluation.</p>
       </div>
 
       
@@ -19,12 +19,13 @@
         <p>Developed a series of documents to capture design and interactve requirements. </p>
         <p>Performed cognitive walkthroughs and heuristic evaluations to measure the usability of wireframes and prototypes. </p>
         <p>Learned about a variety of UI laws, patterns/anti-patterns.</p>
+        <p>Interviewed real users and integrated feedback into the final product.</p>
       </div>
 
       <div class="desc-section">
         <div class="display-1 section-title font-weight-light">Technical Details</div>
         <p>First experience with VueJS, Firebase for hosting/database.</p>
-        <p>Simple component-based approach, pages poll database class for data.</p>
+        <p>Simple component-based approach, pages rely on a database class for content.</p>
         <p>Relied on the Vue Material toolkit for UI elements such as buttons.</p>
       </div>
 

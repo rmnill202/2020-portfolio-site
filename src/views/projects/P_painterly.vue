@@ -9,8 +9,8 @@
       <!-- Project Summary -->
       <div class="desc-section">
         <div class="display-1 section-title font-weight-light">Problem Context</div>
-        <p>Goal to create painterly effect with OSL/GLSL.</p>
-        <p>Implementation based on voronoi-based pixellation, with texture mapping to give the end result a canvas look.</p>
+        <p>Goal to create a non-photorealistic OSL/GLSL shader that mimics the style of a painting.</p>
+        <p>Implementation based on voronoi-based pixellation, with texture mapping to make the end result look as if it had been painted onto a canvas.</p>
       </div>
 
       <div class="desc-section">

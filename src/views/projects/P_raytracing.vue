@@ -10,7 +10,7 @@
       <div class="desc-section">
         <div class="display-1 section-title font-weight-light">Problem Context</div>
         <p>Worked on a few different ray/path tracing renderers for personal and academic purposes.</p>
-        <p>Implementations based on either Java or C++/OpenGL. </p>
+        <p>Used Java for older long-term project, C++/OpenGL for newer code.</p>
       </div>
 
       
@@ -18,7 +18,7 @@
         <div class="display-1 section-title font-weight-light">My Work</div>
         <p>Initially experimented with path tracing by following "Ray Tracing in A Weekend".</p>
         <p>Wrote a more extensive Whitted-style ray tracer for my CSCI-711 term-long project. </p>
-        <p>Wrote a simpler ray caster with C++ and OpenGL compute shaders for better performance later on, as part of a separate class. </p>
+        <p>Wrote a simpler ray caster with C++ and OpenGL compute shaders for better performance later on, as part of a different course. </p>
       </div>
       
 

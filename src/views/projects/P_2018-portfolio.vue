@@ -9,7 +9,7 @@
       <!-- Project Summary -->
       <div class="desc-section">
         <div class="display-1 section-title font-weight-light">Problem Context</div>
-        <p>Wanted to build a SPA website to showcase my academic work. Meant to replace a bland, difficult to update site from freshman year.</p>
+        <p>Wanted to build a SPA website to showcase my academic work. Meant to replace personal website from a few years prior.</p>
       </div>
 
       
@@ -25,7 +25,7 @@
         <div class="display-1 section-title font-weight-light">Retrospective</div>
         <p>It works! Small, simple, but not very visually interesting. </p>
         <p>Liked the diamond-based UI elements, but non-traditional buttons need to be accompanied by more clear indicators such as icons or drop shadows. </p>
-        <p>Started the design before figuring out all of the site content, occasionally ran into the issue of "... what do I actually put here?" </p>
+        <p>Fully fleshed out the layout before figuring out all of the site content, occasionally ran into the issue of "... what do I actually put here?" </p>
       </div>
 
       <div class="desc-section">

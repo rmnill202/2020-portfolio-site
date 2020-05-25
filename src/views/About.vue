@@ -50,7 +50,7 @@ export default {
 }
 
 .link-section a {
-  color:var(--v-link_color-base);
+  color:var(--v-link_color-base) !important;
 }
 
 .about-title {

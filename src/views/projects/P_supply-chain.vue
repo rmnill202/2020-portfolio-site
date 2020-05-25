@@ -18,7 +18,7 @@
         <p>Took charge for the development of the mobile app and early UX/UI tasks such as wireframing. </p>
         <p>Relied on close customer collaboration to develop a user-flow for the mobile app part of the project.</p>
         <p>Produced and presented wireframes and prototypes, made with LucidChart and Figma, to our customers during weekly meetings, used feedback to iterate design.</p>
-        <p>Wireframes were expanded in terms of depth with annotations and multiple examples, while breadth was improved by highlighting the flow between wireframes based on what elements are interacted with. </p>
+        <p>Expanded wireframes in terms of depth with annotations and multiple examples, while breadth was improved by highlighting the flow between wireframes based on what elements are interacted with. </p>
         <p>Completed work across a multi-tier system built on Microsoft technologies; C#, Xamarin, Azure DevOps.</p>
         <p>Composited the team's results together in Adobe Illustrator for our final poster. </p>
       </div>
@@ -27,7 +27,7 @@
         <div class="display-1 section-title font-weight-light">Retrospective</div>
         <p>Exciting and impactful work, great team composition. </p>
         <p>Xamarin had a little bit of a learning curve, but cross-platform support was useful. </p>
-        <p>Resources available in the workplace versus personally allow for easier testing; for example, I don't personally own an iPhone, which makes testing personal projects on iPhone difficult. </p>
+        <p>Valuable experience applying design and UI skills to a new platform.</p>
       </div>
 
       <div class="desc-section">

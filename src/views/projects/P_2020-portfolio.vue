@@ -24,7 +24,7 @@
         <div class="display-1 section-title font-weight-light">Retrospective</div>
         <p>I'm very happy with the color scheme, but I would have liked to experiment with parallaxing.</p>
         <p>Having the site content figured out early on (images, text, etc) helped to avoid wheel-spinning. </p>
-        <p>Learned a lot about CSS animations in the context of performance, such as object properties that perform well when transitioned due to GPU acceleration., and tools for evaluating performance. </p>
+        <p>Learned a lot about CSS animations in the context of performance, such as object properties that perform well when transitioned due to GPU acceleration. </p>
         <p>Big thanks to all the friends that provided feedback and tested on OSes/devices that I don't physically have access to! </p>
       </div>
 

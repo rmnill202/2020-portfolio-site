@@ -66,7 +66,7 @@ module.exports = {
         {text: 'Graphics',      icon: 'fas fa-lightbulb'},
         
       ], 
-      summary: 'Simple Java/C++ ray tracers written for class projects, and in my free time.',
+      summary: 'Simple Java/C++ ray tracers written for academic assignments.',
       
       links: [
         {text: 'Project Site', link: 'https://github.com/rmnill202/2020-portfolio-site'},
