@@ -69,8 +69,7 @@ module.exports = {
       summary: 'Simple Java/C++ ray tracers written for academic assignments.',
       
       links: [
-        {text: 'Project Site', link: 'https://github.com/rmnill202/2020-portfolio-site'},
-        {text: 'Source Code',   link: 'https://rmnill202.github.io/2020-portfolio-site/'},
+        {text: 'Project Site', link: 'https://rmnill202.github.io/711-raytracer/#/updates'},
       ]
     },
 
