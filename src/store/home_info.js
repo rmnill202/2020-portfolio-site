@@ -12,6 +12,8 @@ export default {
     { title: 'Software Engineering Co-op @ Curriculum Associates',                    date: 'Jan - Jun \'18' },
     { title: 'Teaching Assistant - Intro to Software Engineering (3x)',               date: 'Aug \'17 - May \'19' },
     { title: 'Web Dev Co-op @ SITO',                                                  date: 'May - Aug \'19' },
+    { title: 'Web Developer - Doctor on Demand',                                      date: 'July \'20 - Now' },
+    { title: 'Senior Software Engineer - Included Health',                            date: 'July \'21 - Now' },
   ],
   other_experience: [
 
@@ -35,10 +37,10 @@ export default {
   ],
 
   links: [
-    { title: 'GitHub', link: 'https://github.com/rmnill202/'},
-    { title: 'Twitter', link: 'https://twitter.com/rmnill202'},
-    { title: 'LinkedIn', link: 'https://www.linkedin.com/in/robert-nill-096b64112/'},
-    { title: 'Facebook', link: 'https://www.facebook.com/robert.m.nill'}
+    { title: 'GitHub',    icon: 'icons/square-github.svg', link: 'https://github.com/rmnill202/'},
+    { title: 'Twitter',   icon: 'icons/square-twitter.svg', link: 'https://twitter.com/rmnill202'},
+    { title: 'LinkedIn',  icon: 'icons/linkedin.svg', link: 'https://www.linkedin.com/in/robert-nill-096b64112/'},
+    { title: 'Facebook',  icon: 'icons/square-facebook.svg', link: 'https://www.facebook.com/robert.m.nill'}
   ],
 
   contacts: [
