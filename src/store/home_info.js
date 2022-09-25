@@ -41,8 +41,8 @@ export default {
     {v: 3, color: '#917fa9', title: 'Back-end Web',            sub: ['REST, GraphQL', 'Python (Django)', 'Java (Spring)', 'MySQL', 'PHP', 'Ruby'] },
     {v: 2, color: '#917fa9', title: 'CI/CD Monitoring',        sub: ['Docker', 'CircleCI/Jenkins', 'Rollbar/Splunk', 'GitHub'] },
     {v: 4, color: '#82a97f', title: 'Software Design',         sub: ['OOD, Patterns', 'Architecture', 'UML', 'Wireframes', 'UX/UI' ] },
-    {v: 4, color: '#82a97f', title: 'Process',                 sub: ['SDLC', 'Scrum', 'Domain-driven Design', 'Interviewing', ] }, // Ehhhh
-
+    {v: 4, color: '#82a97f', title: 'Process',                 sub: ['SDLC', 'Scrum', 'Domain-driven Design', 'Interviewing', ] }, 
+    
     {v: 4, color: '#82a97f', title: 'Stuff I Know Best',       sub: ['JavaScript', 'Java', 'C/C++', 'Git', 'Lucidchart', 'REST'] },
     {v: 3, color: '#917fa9', title: 'Stuff I\'ve Used',        sub: ['Python', 'C#', 'LaTeX', 'YAML, XML, etc'] },
     {v: 2, color: '#a97f7f', title: 'Want More Experience',    sub: ['Fullstack', 'Databases', 'CI/CD Setup'] },
