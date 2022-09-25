@@ -21,7 +21,7 @@ This should be primarily used for development. Pages will reload on any detected
 This'll be useful for testing the built files before you deploy them.
 
 - Use the command `npm run build` to build the pre-rendered static files for deployment.
-- Use the command `npm run http-server` to deploy an HTTP server with those files.
+- Use the command `npm run http-run` to deploy an HTTP server with those files.
 - The console is a little misleading here; you should visit the URL provided and append the `BASE_URL` from `vue.config.js` onto the end.
 - For example: `http://127.0.0.1:8080/2020-portfolio-site`
 
