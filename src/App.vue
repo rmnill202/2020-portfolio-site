@@ -4,12 +4,15 @@
     <!-- <v-app style="background: linear-gradient(180deg, rgba(223,152,70,1) 0%, rgb(223, 70, 70) 33%);"> -->
   <!-- <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 500px);"> -->
   <!-- <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 500px, rgb(223, 70, 70) 700px, #290036 1200px);"> -->
-  <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 500px);">
+  <!-- <v-app style="background: linear-gradient(180deg, #053669 0%, rgb(223, 70, 70) 500px);"> -->
+    <!-- <v-app style="background-color: rgb(145 64 83)"> -->
+    <!-- <v-app style="background-color: rgb(152 64 81)"> -->
+    <v-app style="background-color: rgb(75 64 102)">
 
     <!-- Navigation -->
     <div> <!-- style="position: sticky; top: 0" -->
       <div style="text-align: center; margin-bottom: 50px; margin-top: 50px">
-        <nav-btn v-for="l in pageLinks" :linkTo="l.linkTo" :text="l.text"/>
+        <nav-btn v-for="l in pageLinks" :linkTo="l.linkTo" :text="l.text" :key="l.linkTo"/>
       </div>
     </div>
 
@@ -32,7 +35,7 @@ export default {
         {text: 'Portfolio',   linkTo: '/',      icon: 'fas fa-briefcase'},
         {text: 'About',       linkTo: '/about', icon: 'fas fa-address-card'},
         {text: 'Contact',       linkTo: '/contact', icon: 'fas fa-address-card'},
-        {text: 'Blog',        linkTo: '/blog',  icon: 'fas fa-comments'},
+        // {text: 'Blog',        linkTo: '/blog',  icon: 'fas fa-comments'},
       ]
     };
   },

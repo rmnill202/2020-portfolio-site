@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="linkTo" class="btn-main anim-border"> <div class="title font-weight-light">{{text}}</div> </router-link>
+  <router-link :to="linkTo" class="btn-main anim-border"> <div class="font-weight-light">{{text}}</div> </router-link>
 </template>
 
 <script>
@@ -25,6 +25,16 @@ export default {
   margin-right: 15px;
   /* width: 85px; */
   margin-top: 15px;
+
+  width: 100px;
+}
+
+.font-weight-light {
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2rem;
+  font-family: "Roboto", sans-serif;
 }
 
 /* .anim-border::before,  */

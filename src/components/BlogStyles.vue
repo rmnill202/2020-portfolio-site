@@ -1,5 +1,6 @@
 <template>
-  <div style="background: linear-gradient(180deg, #05366900 0%, rgb(223, 70, 70) 350px, rgb(223, 70, 70) 550px, #290036 1050px);">
+  <!-- <div style="background: linear-gradient(180deg, #05366900 0%, rgb(223, 70, 70) 350px, rgb(223, 70, 70) 550px, #290036 1050px);"> -->
+  <div>
       <slot style="position: relative; height: 100%; "/>
   </div>
 </template>

@@ -2,17 +2,22 @@
   <div class="skill-div">
     <div class="skill-grid">
 
-      <div  v-for="(s, index) in skills" class="skill-diamond-container">
+      <div  v-for="(s, index) in skills" class="skill-diamond-container" :key="s.title">
         <div class="skill-diamond" :tabindex="1 + index">
           <div :class="`diamond-fill-${s.v}`" /> <!-- :style="`background-color: ${s.color}`" -->
           <div class="diamond-text">{{s.title}}</div>
           <div class="diamond-details">
-            <div> {{detailStr(s)}} </div>
+            <!-- <div>{{detailStr(s)}} </div> -->
+            <div v-for="val in s.sub">- {{val}}</div>
           </div>
           <div class="diamond-icon"><v-icon class="icon-inner">fas fa-plus</v-icon></div>
         </div>
         <div class="diamond-shadow"></div>
         <div class="diamond-closer"/>
+        <div class="diamond-dots">
+          <v-icon x-small class="diamond-dot-filled" v-for="(n, index) in (s.v - 1)">fas fa-circle</v-icon>
+          <v-icon x-small class="diamond-dot" v-for="(n, index) in (3 - (s.v - 1))">fas fa-circle</v-icon>
+        </div>
       </div>
       
 
@@ -101,7 +106,7 @@ export default {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
   z-index: 9999;
   /* pointer-events: none; Allows the second click to de-focus */
-  border-color:transparent!important;
+  /* border-color:transparent!important; */
   outline:none;
   transition: clip-path 0.25s, z-index 0.05s step-start;
 }
@@ -143,6 +148,10 @@ export default {
 .icon-inner {
   color: var(--v-primary_icon_inner-base) !important;
 }
+.skill-diamond:focus .icon-inner {
+  color: #fff !important;
+}
+
 
 .diamond-icon {
   display: flex;
@@ -167,16 +176,18 @@ export default {
 }
 .skill-diamond:focus .diamond-icon {
   /* opacity: 0; */
-  transition: transform 0.25s;
-  transform: translate(60px, 10px) rotate(45deg);
+  transition: transform 0.35s ease;
+  transform: translate(55px, 5px) rotate(45deg);
   /* clip-path: polygon(50% 50%,50% 50%,50% 50%,50% 50%); */
+  background-color: #000;
+  /* color: #fff; */
 }
 
 .diamond-details {
   width: 150px;
   position: absolute; 
   top: 0;
-  text-align: center;
+  text-align: left;
   color: var(--v-primary_text-base);
   opacity: 0;
   transition: opacity 0.25s;
@@ -197,7 +208,7 @@ export default {
   background-size: 150px 150px;
   position: absolute;
   top: 0;
-  transition: transform 0.25s;
+  transition: transform 0.25s, background-color 0.25s;
   will-change: transform;
   /* transform: translate(0, 0); */
 }
@@ -212,6 +223,9 @@ export default {
 
 .skill-diamond:focus .diamond-fill-2, .skill-diamond:focus .diamond-fill-3, .skill-diamond:focus .diamond-fill-4 {
   transform: translate(0, 0);
+
+  background-color: #df5555;
+  /* border-top: 1px solid #fff; */
 }
 
 
@@ -327,6 +341,48 @@ export default {
     grid-column-start: 2;
     grid-column-end:   3;
   }
+}
+
+.diamond-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  z-index: 9000;
+  margin-top: 28px;
+  transform: scale(100%);
+  transform-origin: top;
+
+  transition: all 0.25s ease;
+}
+
+.skill-diamond:focus ~ .diamond-dots {
+  opacity: 0;
+  transform: scale(80%);
+}
+
+.skill-diamond:hover ~ .diamond-dots {
+  opacity: 0.5;
+  transform: scale(80%);
+}
+
+.diamond-dot {
+  height: 8px;
+  width:  10px;
+  margin: 0px 2px;
+}
+
+.diamond-dot-filled {
+  height: 8px;
+  width:  10px;
+  margin: 0px 2px;
+  /* color: rgba(255, 255, 255, 0.705) !important; */
+  color: #ff6565 !important;
 }
 
 </style>

@@ -15,7 +15,7 @@
       <!-- Intro - Statement, degrees -->
       <div class="homepage-intro">
         <div class="display-3 intro-name font-weight-thin">Hi, I'm Robert Nill</div>
-        <div class="headline font-weight-thin">Software Engineer </div>
+        <div class="headline font-weight-thin">Senior Software Engineer </div>
         <reg-btn class="resume-button" :linkTo="`${publicPath}/2020_Nill_Software_Engineer_Resume.pdf`" text="Resume"/> 
       </div>
 
@@ -90,8 +90,10 @@ export default {
 }
 
 .homepage-intro {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;;
+  grid-template-columns: 100%;
   grid-template-rows: min-content min-content;
   max-width: 450px;
   color: var(--v-bg_text-base);
@@ -100,8 +102,7 @@ export default {
   margin-bottom: 100px;
 }
 .intro-name {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  margin-bottom: 16px;
 }
 
 .bg-wrapper {

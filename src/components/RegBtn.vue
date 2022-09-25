@@ -22,8 +22,8 @@ export default {
   position: relative;
   text-decoration: none;
   color: var(--v-navbar_text-base);
-  padding-left:  7px;
-  padding-right: 7px;
+  padding-left:  16px;
+  padding-right: 16px;
   text-align: center;
 }
 

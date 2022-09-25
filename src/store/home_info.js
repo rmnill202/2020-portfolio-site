@@ -24,16 +24,28 @@ export default {
   // Purp - #917fa9
   // Green - 
 
-  skills: [ 
-    {v: 4, color: '#82a97f', title: 'Front-end Web',           sub: ['HTML/CSS', 'VueJS', 'Angular', 'Material', 'UX/UI'] },
-    {v: 3, color: '#917fa9', title: 'Back-end Web',            sub: ['Java (Spring, Spark)', 'PHP', 'MySQL'] },
-    {v: 3, color: '#917fa9', title: 'Graphics Programming',    sub: ['OpenGL/GLSL', 'OSL', 'HLS,L'] },
-    {v: 4, color: '#82a97f', title: 'Software Design',         sub: ['OO Design', 'Patterns', 'Architecture', 'UML', 'Wireframes', ] },
-    {v: 4, color: '#82a97f', title: 'Software Process',        sub: ['SDLC', 'Scrum', 'Domain-driven Design', ] },
+  // skills: [ 
+  //   {v: 4, color: '#82a97f', title: 'Front-end Web',           sub: ['HTML/CSS', 'VueJS', 'Angular', 'Material', 'UX/UI'] },
+  //   {v: 3, color: '#917fa9', title: 'Back-end Web',            sub: ['Java (Spring, Spark)', 'PHP', 'MySQL'] },
+  //   {v: 3, color: '#917fa9', title: 'Graphics Programming',    sub: ['OpenGL/GLSL', 'OSL', 'HLS,L'] },
+  //   {v: 4, color: '#82a97f', title: 'Software Design',         sub: ['OO Design', 'Patterns', 'Architecture', 'UML', 'Wireframes', ] },
+  //   {v: 4, color: '#82a97f', title: 'Software Process',        sub: ['SDLC', 'Scrum', 'Domain-driven Design', ] },
 
-    {v: 4, color: '#82a97f', title: 'Stuff I Know Best',   sub: ['JavaScript', 'Java', 'C/C++', 'Git', 'Lucidchart', 'REST'] },
-    {v: 3, color: '#917fa9', title: 'Stuff I Know Well',   sub: ['Python', 'C#', 'SVN', 'LaTeX', 'YAML, XML, etc'] },
-    {v: 2, color: '#a97f7f', title: 'Stuff I\'ve Used',    sub: ['Ruby', 'PHP', 'SQL'] },
+  //   {v: 4, color: '#82a97f', title: 'Stuff I Know Best',   sub: ['JavaScript', 'Java', 'C/C++', 'Git', 'Lucidchart', 'REST'] },
+  //   {v: 3, color: '#917fa9', title: 'Stuff I Know Well',   sub: ['Python', 'C#', 'SVN', 'LaTeX', 'YAML, XML, etc'] },
+  //   {v: 2, color: '#a97f7f', title: 'Stuff I\'ve Used',    sub: ['Ruby', 'PHP', 'SQL'] },
+  // ],
+
+  skills: [ 
+    {v: 4, color: '#82a97f', title: 'Front-end Web',           sub: ['Vue, React', 'Angular (1.x, 7/8)', 'Architecture', 'State Mgmt (VueX)', 'Persistence'] },
+    {v: 3, color: '#917fa9', title: 'Back-end Web',            sub: ['REST, GraphQL', 'Python (Django)', 'Java (Spring)', 'MySQL', 'PHP', 'Ruby'] },
+    {v: 2, color: '#917fa9', title: 'CI/CD Monitoring',        sub: ['Docker', 'CircleCI/Jenkins', 'Rollbar/Splunk', 'GitHub'] },
+    {v: 4, color: '#82a97f', title: 'Software Design',         sub: ['OOD, Patterns', 'Architecture', 'UML', 'Wireframes', 'UX/UI' ] },
+    {v: 4, color: '#82a97f', title: 'Process',                 sub: ['SDLC', 'Scrum', 'Domain-driven Design', 'Interviewing', ] }, // Ehhhh
+
+    {v: 4, color: '#82a97f', title: 'Stuff I Know Best',       sub: ['JavaScript', 'Java', 'C/C++', 'Git', 'Lucidchart', 'REST'] },
+    {v: 3, color: '#917fa9', title: 'Stuff I\'ve Used',        sub: ['Python', 'C#', 'LaTeX', 'YAML, XML, etc'] },
+    {v: 2, color: '#a97f7f', title: 'Want More Experience',    sub: ['Fullstack', 'Databases', 'CI/CD Setup'] },
   ],
 
   links: [
