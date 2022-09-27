@@ -16,7 +16,7 @@
       <div class="homepage-intro">
         <div class="display-3 intro-name font-weight-thin">Hi, I'm Robert Nill</div>
         <div class="headline font-weight-thin">Senior Software Engineer </div>
-        <reg-btn class="resume-button" :linkTo="`${publicPath}/2020_Nill_Software_Engineer_Resume.pdf`" text="Resume"/> 
+        <reg-btn class="resume-button" :linkTo="`${publicPath}/2022_Nill_Software_Engineer_Resume.pdf`" text="Resume"/> 
       </div>
 
       <!-- Skillsets, looking for -->
